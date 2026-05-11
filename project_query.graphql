@@ -1,0 +1,28 @@
+query projectItems($owner:String!, $number:Int!) {
+  user(login:$owner) {
+    projectV2(number:$number) {
+      title
+      items(first:100) {
+        nodes {
+          content {
+            __typename
+            ... on Issue { title }
+            ... on DraftIssue { title }
+            ... on PullRequest { title }
+          }
+          fieldValues(first:20) {
+            nodes {
+              __typename
+              ... on ProjectV2ItemFieldSingleSelectValue {
+                name
+                projectField {
+                  ... on ProjectV2FieldCommon { name }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

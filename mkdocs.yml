@@ -1,0 +1,55 @@
+site_name: ILS Documentation
+site_description: "Documentation for the Intelligent Learning System (ILS) — user manuals and developer guides"
+site_author: Maestrocop
+nav:
+  - Home: index.md
+  - Teacher:
+    - "Teacher Dashboard": teacher/index.md
+    - "Student Cockpit": teacher/cockpit.md
+    - "Heatmap": teacher/heatmap.md
+    - "Grading & Rubrics": teacher/grading.md
+    - "Interventions": teacher/interventions.md
+    - "Teacher FAQ": teacher/faq.md
+  - Student:
+    - "Student Dashboard": student/index.md
+    - "Submitting Work": student/submissions.md
+    - "Feedback & Grades": student/feedback.md
+    - "Outcomes & Progress": student/outcomes.md
+  - Admin:
+    - "Admin Overview": admin/index.md
+    - "Users & Roles": admin/users.md
+    - "Deployment": admin/deployment.md
+    - "Backups": admin/backups.md
+  - Management:
+    - "For School Leaders": management/index.md
+    - "Dashboards": management/dashboards.md
+    - "Thresholds": management/thresholds.md
+    - "Reporting": management/reporting.md
+  - Concepts:
+    - "ILS vs LMS": concepts/ils-vs-lms.md
+    - "Outcome Mastery": concepts/outcome-mastery.md
+    - "Trend Confidence": concepts/trend-confidence.md
+    - "Data Model": concepts/data-model.md
+  - Developer:
+    - "Developer Home": developer/index.md
+    - "Architecture": developer/architecture.md
+    - "Setup": developer/setup.md
+    - "Decisions": developer/decisions.md
+    - "API Reference": developer/api.md
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+extra:
+  social:
+    - type: github
+      link: https://github.com/Maestrocop/ILS-dev
+repo_url: https://github.com/Maestrocop/ILS-dev
