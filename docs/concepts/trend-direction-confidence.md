@@ -1,7 +1,30 @@
 # Trend Direction & Confidence
 
-This page describes how the system computes both the direction of score change and its confidence.
+Trend analysis in ILS combines two related facts:
+- whether mastery is moving up or down, and
+- how confident the system is that the movement is real.
 
-- Trend direction indicates whether student mastery is improving, declining, or stable.
-- Trend confidence indicates how reliable that direction is, based on snapshot history and score variance.
-- The combination helps teachers understand when a change is meaningful versus experimental.
+## Trend direction
+
+- **Up** means the latest mastery score is higher than the previous snapshot.
+- **Down** means the latest mastery score is lower.
+- **Flat** means the score has not changed significantly.
+
+## Trend confidence
+
+Trend confidence measures how dependable the direction signal is.
+
+- **High** confidence: multiple consistent snapshots and clear score movement.
+- **Medium** confidence: enough history exists, but the change is smaller or less consistent.
+- **Low** confidence: limited snapshot history or mixed score signals.
+- **Insufficient**: too few snapshots to compute a reliable trend.
+
+## Why both matter
+
+- Direction alone can be noisy: a single low score can look like a downward trend.
+- Confidence helps teachers interpret whether the direction is stable or temporary.
+
+## Example
+
+- A student moves from 6.5 to 7.4, with a prior sequence of rising scores: direction is Up, confidence is High.
+- A student moves from 8.0 to 7.8 after only one prior snapshot: direction is Down, confidence is Low.

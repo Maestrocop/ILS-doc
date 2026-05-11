@@ -1,7 +1,24 @@
 # At-Risk Detection Logic
 
-This page explains how the system identifies students who are at risk of falling below expected mastery thresholds.
+At-risk detection identifies students whose outcome mastery is below a configured threshold.
 
-- At-risk status is based on outcome mastery scores and configured success thresholds.
-- It is used to populate the teacher cockpit and drive intervention planning.
-- The page should document the threshold logic and how it ties back to campuses, classes, and outcomes.
+## What triggers at-risk status
+
+- A student’s mastery score for an outcome falls below the defined success threshold.
+- A combination of low mastery and declining trend increases risk priority.
+
+## Thresholds
+
+- Thresholds are typically defined at the campus or course level.
+- The system compares mastery scores against the applicable threshold for the student’s class.
+
+## How it is used
+
+- At-risk students are surfaced in the teacher cockpit.
+- The cockpit uses this signal to prioritize interventions and progress checks.
+- At-risk status is a prompt for the teacher, not an automatic action.
+
+## Practical notes
+
+- A student can be at risk on one outcome but not others.
+- Teachers should review both current mastery and trend confidence before deciding on next steps.
