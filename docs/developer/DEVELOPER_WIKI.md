@@ -49,6 +49,7 @@ This repo is a docs repository. The application code remains in `ILS-dev`; this 
 - This documentation repo is intentionally separate from `ILS-dev`.
 - `docs/phase-a-structure` is the current branch for Phase A work.
 - GitHub Project 5 is used to track Phase A and Phase B documentation tasks.
+- `Active-ILS-doc.md` is the local project tracker for the docs repo.
 
 ## 3. Glossary of Terms
 
@@ -129,6 +130,14 @@ npm run dev
 
 - Backend tests: `cd backend && npm run test:reporting`
 - Frontend tests: `cd frontend && npm run test:playwright`
+
+### ILS-doc repo workflow
+
+- Always work on `docs/phase-a-structure` unless a new phase branch is needed.
+- Keep content changes inside `ILS-doc` only.
+- Use `Active-ILS-doc.md` to document current scope and objectives.
+- Build the site locally with `mkdocs build` after content changes.
+- Preview live changes with `mkdocs serve` when ready.
 
 ## 6. Key workflows
 
