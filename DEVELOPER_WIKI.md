@@ -1,104 +1,173 @@
 # DEVELOPER_WIKI
 
-This file is a concise, developer-focused reference for the ILS codebase. It is intentionally technical: architecture rationale, data model, setup steps, key workflows, known issues, and a glossary.
+This developer wiki is a Phase A reference for the ILS architecture and developer workflow. It is intentionally technical and focused on implementation, not end-user guidance.
 
-## 1. Architecture decisions and rationale
+## 1. Purpose
 
-- Backend: Node.js + Express with Sequelize ORM.
-  - Rationale: Familiar stack, good migration tooling, active ecosystem.
-  - Decision notes: keep migrations as the single source of truth; do not enable `sequelize.sync()` in production.
+This document is the developer entry point for the ILS documentation effort. It should answer:
 
-- Frontend: React + Vite + Tailwind CSS.
-  - Rationale: fast dev feedback loop, small bundles, and Tailwind accelerates UI development.
+- Why architectural decisions were made
+- Which data model relationships matter most
+- How to set up the local development environment
+- How grading, snapshots, and trends flow through the system
+- Known issues, gotchas, and future maintenance tasks
 
-- DB-first policy: All schema changes must be done via idempotent migrations.
-  - Rationale: maintain production compatibility and auditability.
+This repo is a docs repository. The application code remains in `ILS-dev`; this wiki references that codebase without modifying it.
 
-- BigInt handling: JSON middleware converts BigInt → string for API responses.
-  - Rationale: browser/JSON limitations.
+## 2. Architecture decisions and rationale
 
-- Separation of concerns: vertical hierarchy (institution → campus → course → module → assignment → class) remains separate from intelligence layer (themes, outcomes, rubrics).
+### Backend
 
-## Glossary of Terms
+- **Node.js + Express + Sequelize**
+  - Reason: stable ecosystem, familiar ORM patterns, and good migration support.
+  - Rule: migrations are the single source of truth for schema changes.
+  - Rule: `sequelize.sync()` must remain disabled in every environment.
+
+- **Database-first policy**
+  - All schema changes must be implemented with idempotent SQL migrations under `backend/migrations/`.
+  - Migrations should include existence checks where relevant and avoid destructive operations without rollback strategy.
+
+- **BigInt serialization**
+  - The backend uses JSON middleware that converts `BigInt` values to strings before sending API responses.
+  - This avoids browser `JSON.stringify()` failures and keeps API output stable.
+
+### Frontend
+
+- **React + Vite + Tailwind CSS**
+  - Reason: fast local feedback loop, lightweight build, and predictable styling.
+  - The frontend is designed to consume the backend API and render dashboards, heatmaps, and teacher workflows.
+
+### Separation of concerns
+
+- The system is organized as two coupled domains:
+  - **Vertical hierarchy**: institution → campus → course → module → assignment → class
+  - **Intelligence layer**: outcomes, rubrics, criteria, trends, and heatmaps
+- Keeping these domains separate avoids mixing structural course data with learning analytics.
+
+### Docs workflow
+
+- This documentation repo is intentionally separate from `ILS-dev`.
+- `docs/phase-a-structure` is the current branch for Phase A work.
+- GitHub Project 5 is used to track Phase A and Phase B documentation tasks.
+
+## 3. Glossary of Terms
 
 | Term | Definition |
 |------|------------|
-| Outcome | Learning objective, measurable skill |
-| Mastery Score | 0–10 numeric scale calculated from rubric criteria |
-| Snapshot | Point-in-time record of student mastery (per outcome) |
-| Trend Direction | Up / Down / Flat, derived from score delta between snapshots |
-| Trend Confidence | High / Medium / Low / Insufficient — computed from snapshot counts and variance |
-| At-Risk | Student below campus or class success threshold |
-| Cockpit | Teacher dashboard for student attention and interventions |
-| Heatmap | Matrix of students × outcomes showing mastery scores |
+| Outcome | A measurable learning objective or skill that the system tracks |
+| Mastery Score | A 0–10 score representing outcome proficiency, derived from rubric and submission data |
+| Snapshot | A point-in-time record of a student’s mastery score for a specific outcome |
+| Trend Direction | The direction of change between snapshots: Up, Down, or Flat |
+| Trend Confidence | A confidence category based on snapshot history and score stability |
+| At-Risk | A student whose mastery score is below an applicable success threshold |
+| Cockpit | The teacher-facing dashboard for identifying students and outcomes that need attention |
+| Heatmap | A grid showing student mastery levels across outcomes |
 
-(Place glossary after Architecture Decisions and before Data Model in MkDocs nav.)
+## 4. Data model (key relationships)
 
-## 2. Data model (key relationships)
+The ILS data model is built around two connected domains.
 
-- Primary entities (high level): `institutions`, `campuses`, `courses`, `modules`, `assignments`, `classes`, `students`.
-- Intelligence entities: `outcomes`, `rubrics`, `criteria`, `themes`.
-- Junction tables: `module_outcomes`, `assignment_outcomes`, `assignment_rubrics`, `module_themes`.
-- Important relationships:
-  - `assignment` → belongsTo `module`
-  - `submission` → belongsTo `assignment`, belongsTo `student`
-  - `rubric` → hasMany `criteria`; `submission_ratings` store criterion-level ratings
-  - `student_outcome_snapshots` capture aggregated mastery score per student/outcome at a timestamp
+### Vertical structure
 
-(Diagram: include ER diagram PNG in `docs/media` later.)
+- `institutions` → `campuses` → `courses` → `modules` → `assignments` → `classes`
+- Students are enrolled in classes and submit work against assignments.
 
-## 3. Setup & development environment
+### Intelligence entities
 
-- Prereqs: Node 18+, npm 10+, PostgreSQL 14+, Git, gh CLI (optional).
-- Backend:
+- `outcomes` describe what students should learn.
+- `rubrics` define how work is scored.
+- `criteria` are the individual rubric items.
+- `themes` are higher-level groupings of curriculum intelligence.
+
+### Junction tables
+
+- `module_outcomes` connects modules to outcomes.
+- `assignment_outcomes` connects assignments to outcomes.
+- `assignment_rubrics` connects assignments to rubrics.
+- `module_themes` connects modules to themes.
+
+### Core relationships
+
+- `assignment` belongs to `module`
+- `submission` belongs to `assignment` and `student`
+- `submission_ratings` capture rubric criterion ratings per submission
+- `student_outcome_snapshots` capture aggregated mastery per student/outcome over time
+
+### Snapshot data
+
+- Each snapshot is a historical record used to compute trends.
+- A snapshot typically includes: student id, outcome id, mastery score, timestamp, and confidence metadata.
+- The system relies on snapshots for both dashboards and trend analysis.
+
+## 5. Setup & development environment
+
+This repo is for documentation. The application code is in `ILS-dev`.
+
+### ILS-doc local docs server
 
 ```powershell
-cd backend
-cp .env.example .env
-# ensure DATABASE_URL points to local test DB
+cd C:\Users\0102663\Projects\bim\ILS-doc
+pip install mkdocs-material
+mkdocs serve
+```
+
+### ILS-dev app setup
+
+The application code lives in `C:\Users\0102663\Projects\bim\ILS-dev`.
+
+```powershell
+cd C:\Users\0102663\Projects\bim\ILS-dev\backend
+copy .env.example .env
 npm install
-npm run create-db   # run migrations and seed minimal test data
+npm run create-db
+npm run dev
+
+cd ..\frontend
+npm install
 npm run dev
 ```
 
-- Frontend:
+### Testing
 
-```powershell
-cd frontend
-npm install
-npm run dev
-```
+- Backend tests: `cd backend && npm run test:reporting`
+- Frontend tests: `cd frontend && npm run test:playwright`
 
-- Running tests:
-  - Backend unit/reporting tests: `cd backend && npm run test:reporting`
-  - Frontend E2E: `cd frontend && npm run test:playwright`
-
-## 4. Key workflows
+## 6. Key workflows
 
 ### Grading → snapshots → trends
 
-1. Teacher grades a submission; rubric criterion ratings are persisted in `submission_ratings`.
-2. A background worker (or API action) aggregates rubric scores into an assignment-level mastery and writes/updates `student_outcome_snapshots` for each (student, outcome).
-3. Trend computation compares recent snapshots to compute `trend_direction` (delta sign) and `trend_confidence` (based on snapshot count and variance). See `backend/lib/grading_engine.js` for formulas.
+1. A teacher grades a submission using rubrics.
+2. Criterion-level ratings are saved in `submission_ratings`.
+3. The backend aggregates these ratings into per-assignment outcome scores.
+4. `student_outcome_snapshots` are created or updated for each student/outcome.
+5. Trend computation compares the latest snapshots to previous snapshots and produces:
+   - `trend_direction`
+   - `trend_confidence`
+   - `delta`
 
-### Typical developer tasks
+### Developer tasks for Phase A
 
-- Add migration: write idempotent SQL migration under `backend/migrations/` and include `IF NOT EXISTS` guards.
-- Add model field: update Sequelize model and add corresponding migration. Run migrations locally.
+- Update documentation content in this repo, not application code.
+- Use the current branch `docs/phase-a-structure` for Phase A work.
+- Keep Phase A focused on developer-facing architecture, setup, and workflows.
 
-## 5. Known issues & future todos
+## 7. Known issues & future todos
 
-- Some environments may lack `jq` which makes CLI GraphQL payload handling brittle; prefer file-based GraphQL queries or `gh` subcommands.
-- Ensure `ILS_BACKUP_ROOT` points to a persistent location; backups live outside repo.
-- TODO: add ER diagram, API reference examples, and troubleshooting steps for common DB errors.
+- `pwsh` may not be available in some Windows environments; git hooks should fall back to `powershell` as needed.
+- Documentation in this repo should not mix user guides with developer guidance.
+- Future additions:
+  - API reference examples
+  - ER diagrams and relationship visualizations
+  - Troubleshooting and environment setup notes
 
-## 6. Quick links (dev)
+## 8. Quick links
 
-- Backend server: `backend/src/server.js`
-- Migrations: `backend/migrations/`
-- Frontend entry: `frontend/src/main.jsx`
-- Project board (ILS-doc): GitHub Project ID 5 (owner: Maestrocop)
+- ILS app backend: `C:\Users\0102663\Projects\bim\ILS-dev\backend`
+- ILS app frontend: `C:\Users\0102663\Projects\bim\ILS-dev\frontend`
+- Docs repo: `C:\Users\0102663\Projects\bim\ILS-doc`
+- Current docs branch: `docs/phase-a-structure`
+- Project board: https://github.com/users/Maestrocop/projects/5
 
 ---
 
-End of developer wiki (starter). Expand sections into MkDocs pages as needed.
+This page is the Phase A developer reference for ILS documentation. Review before expanding into separate MkDocs pages.
