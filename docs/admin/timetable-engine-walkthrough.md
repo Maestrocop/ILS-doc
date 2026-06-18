@@ -18,6 +18,23 @@ Follow these steps in order — each role picks up where the previous left off. 
 4. Activate: click **Activate** → system generates session rows up to period end; holiday dates are marked `cancelled` and show holiday name.
 5. Inspect sessions: confirm scheduled vs cancelled/makeup statuses and expected session count.
 
+## Teacher assignment flow (important note)
+
+Before creating timetable rules, confirm teachers are assigned at the class level:
+
+1. Open `/admin/my-classes` → select the class (e.g. BK-J1-2526) → go to **Setup Curriculum** and confirm each module has a teacher assigned (this creates a `class_module_teachers` row).
+2. Now open `/admin/timetable` → select the class → the Schedule Rules matrix will pull modules from the class curriculum. When you create a rule and pick a module, the teacher field will auto-fill from the `class_module_teachers` assignment. If multiple teachers are assigned to the same module, choose the teacher to use for that rule.
+
+Corrected end-to-end steps:
+
+1. `/admin/my-classes` → BK-J1-2526 → **Setup Curriculum** → confirm modules have a teacher assigned
+2. `/admin/timetable` → BK-J1-2526 → matrix shows Semester 2 row / Mon column → click `+ Add` → pick module → teacher auto-fills → Save
+3. Click **Generate sessions** → confirm count
+4. Check teacher calendar at `/teacher/calendar`
+5. Check student calendar at `/student/calendar`
+
+Question: Are the teachers already assigned in `my-classes`, or does that need to be done first? Short answer: Yes — assign teachers first in `my-classes`; timetable rules read those assignments.
+
 ---
 
 ## Phase 2 — Teacher: Mark Attendance
