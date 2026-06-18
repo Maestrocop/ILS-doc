@@ -89,6 +89,19 @@ Option C — Delete orphan periods (only if safe)
 
 ---
 
+## Implementation details (what the system does today)
+
+These notes reflect the current `ILS-dev` implementation so admins know which APIs and pages can create or remediate orphan periods. This is informational only — I will not change `ILS-dev`.
+
+- Composer can create course-scoped periods via `POST /api/curriculum/courses/:courseId/periods`. That endpoint accepts `start_date` and `end_date` but does not require them, so null-dated periods can be created.
+- Course structure writes (`POST /api/curriculum/courses/:courseId/structure`, `PATCH /api/curriculum/structure/:id`) accept a `period_id` and currently do not validate that the referenced `academic_periods` row has non-null dates.
+- There is a best-effort mapping routine `syncCourseTimeline()` that attempts to map composer period names back to calendar periods by name + parent year; this mapping is NOT a reliable guard against orphans.
+- The Periods admin endpoints are `GET /api/periods`, `GET /api/periods/tree`, `POST /api/periods`, `PUT /api/periods/:id`, and `DELETE /api/periods/:id` (admin-only). Use these to add dates or remove orphan records.
+
+Recommended immediate admin action: use the queries from the Admin Health Checks page to identify undated rows, then either add `start_date`/`end_date` and parent them to the correct academic year, or re-point `course_structure` rows to the correct dated period ids.
+
+---
+
 ## Policy (process rule to include in onboarding)
 
 ALWAYS in this order:

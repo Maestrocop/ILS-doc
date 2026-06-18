@@ -43,6 +43,18 @@ WHERE ap.start_date IS NULL OR ap.end_date IS NULL;
 
 ---
 
+## Implementation notes (what to look for in the code)
+
+These reflect current `ILS-dev` behavior so you can correlate Health check results with the pages and APIs:
+
+- Composer creates course-owned periods via `POST /api/curriculum/courses/:courseId/periods` and may leave `start_date`/`end_date` null if entered that way.
+- Course structure creation endpoints (`POST /api/curriculum/courses/:courseId/structure`) accept a `period_id` and will insert rows linking modules to that period id; these writes do not validate that the period has dates on the API boundary.
+- Use the Admin Periods UI (Periods page) which calls `GET /api/periods` and `GET /api/periods/tree` to view and edit periods; updates use `PUT /api/periods/:id` or `PATCH /api/curriculum/periods/:periodId` for course-scoped periods.
+
+If you want, I can add the exact endpoint examples (curl + request body) to help Admins perform remediation via API. I will not change `ILS-dev`.
+
+---
+
 ## Safe remediation steps
 
 1. Backup DB (dump or create a migration that copies affected rows).
