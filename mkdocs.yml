@@ -57,6 +57,10 @@ nav:
         - Periods: admin/periods.md
         - Periods & Templates: admin/periods-and-templates.md
         - Periods Playbook (step-by-step): admin/periods-playbook.md
+        - Periods Playbook (Cheat Sheet): admin/periods-playbook-cheatsheet.md
+        - Periods & Scheduling: admin/periods-and-scheduling-process.md
+        - Admin Health Checks: admin/admin-health-checks.md
+        - Timetable Engine Walkthrough: admin/timetable-engine-walkthrough.md
         - Themes: admin/themes.md
         - Outcomes: admin/outcomes.md
         - Categories: admin/categories.md
