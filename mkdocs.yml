@@ -1,27 +1,166 @@
 site_name: ILS Documentation
-site_url: https://yourusername.github.io/ILS-doc/
-repo_url: https://github.com/yourusername/ILS-doc
-repo_name: GitHub
-
-theme:
-  name: material
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.top
-
 nav:
-  - Home: index.md
-  - Developer Guide: developer/DEVELOPER_WIKI.md
-  - ILS Concepts:
-      - concepts/ils-vs-lms.md
-      - concepts/outcome-mastery.md
-      - concepts/snapshot-lifecycle.md
-      - concepts/trend-direction-confidence.md
-      - concepts/at-risk-detection.md
-      - concepts/heatmap-interpretation.md
+    - Home: index.md
+    - Developer Guide:
+        - Overview: developer/index.md
+        - Architecture & Model:
+            - Architecture: developer/architecture.md
+            - Data Model: developer/data-model.md
+        - Curriculum Design:
+            - Institutions: developer/institutions.md
+            - Campuses: developer/campuses.md
+            - Course Creation: developer/course-creation.md
+            - Classes: developer/classes.md
+            - Themes: developer/themes.md
+            - Outcomes: developer/outcomes.md
+            - Module Creation: developer/module-creation.md
+            - Module Composition & Locking: developer/module-composition-locking.md
+        - Developer Workflows:
+            - Workflows: developer/workflows.md
+            - Users: developer/users.md
+            - Classes API: developer/classes-api.md
+            - Events API: developer/events-api.md
+            - Academic Calendar API: developer/academic-calendar.md
+            - Periods API: developer/periods-api.md
+            - Timetable API: developer/timetable-api.md
+            - Heatmap: developer/heatmap.md
+            - Reporting Rules: developer/reporting-rules.md
+            - Student Cockpit: developer/student-cockpit.md
+            - Student APIs: developer/student-apis.md
+            - Teacher Roster: developer/teacher-roster.md
+            - Classroom Intelligence: developer/classroom-intelligence.md
+            - Grading Cockpit: developer/grading-cockpit.md
+            - Grading & Submissions API: developer/grading-and-submissions.md
+            - Cockpit & Heatmap APIs: developer/cockpit-and-heatmap.md
+            - AI Quiz APIs: developer/ai-quiz.md
+            - Assignments: developer/assignments.md
+            - Rubrics: developer/rubrics.md
+            - Criteria Bank: developer/criteria-bank.md
+            - Mapping Matrix: developer/mapping-matrix.md
+            - Pending API tasks: developer/pending-api-tasks.md
+            - API Reference: developer/api.md
+        - Setup & Support:
+            - Setup: developer/setup.md
+            - Utilities & Scripts: developer/utilities-scripts.md
+            - Database & Migrations: developer/database-migrations.md
+            - Troubleshooting: developer/troubleshooting.md
+            - Release Plan: developer/release-plan.md
+            - Process Engine: developer/process-engine.md
+        - Decisions & Terms:
+            - Decisions: developer/decisions.md
+            - Glossary: developer/glossary.md
+    - Admin Guide:
+        - Admin Overview: admin/index.md
+        - Institutions: admin/institutions.md
+        - Campuses: admin/campuses.md
+        - Courses & Modules: admin/courses-modules.md
+        - Periods: admin/periods.md
+        - Periods & Templates: admin/periods-and-templates.md
+        - Periods Playbook (step-by-step): admin/periods-playbook.md
+        - Themes: admin/themes.md
+        - Outcomes: admin/outcomes.md
+        - Categories: admin/categories.md
+        - Rubrics & Criteria: admin/rubrics-criteria.md
+        - Criteria Bank: admin/criteria-bank.md
+        - Mapping Matrix: admin/mapping-matrix.md
+        - Audit Logs: admin/audit-logs.md
+        - Setup Health: admin/setup-health.md
+        - Periods & Scheduling: admin/periods-and-scheduling-process.md
+        - Admin Health Checks: admin/admin-health-checks.md
+        - Timetable Engine Walkthrough: admin/timetable-engine-walkthrough.md
+        - Teacher Dashboard: admin/teacher-dashboard.md
+        - Curriculum Composer: admin/curriculum.md
+        - Curriculum Composer V2:
+            - Overview: admin/curriculum-v2.md
+            - Curriculum Entry (OP1): admin/curriculum-entry-op1.md
+            - End-to-End Setup Guide: admin/end-to-end-setup-guide.md
+        - Quizzes: admin/quizzes.md
+        - Projects: admin/projects.md
+        - Internships: admin/internships.md
+        - Module Composer: admin/module-composer.md
+        - Academic Calendar: admin/academic-calendar.md
+        - Pre-September Setup Checklist: admin/pre-september-checklist.md
+        - Slot Edit Proposal: admin/slot-edit-proposal.md
+        - Admin Tools: admin/admin-tools.md
+        - My Work: admin/my-work.md
+        - Course Builder: admin/course-builder.md
+        - Users: admin/users.md
+        - Classes: admin/classes.md
+        - Curriculum Composer vs Class Setup: admin/curriculum-composer-vs-class-setup.md
+        - Assignments: admin/assignments.md
+        - Progression Review Test Guide: admin/progression-review-test-guide.md
+        - Settings & Reporting Rules: admin/settings.md
+        - Curriculum Composer Guide: admin/curriculum-composer-guide.md
+        - BSA Multi-Institution: admin/bsa-multi-institution.md
+        - Class Deletion: admin/class-deletion.md
+        - Companies: admin/companies.md
+        - Student Support: admin/student-support.md
+        - Passing-but-Outcome-Gap Alerts: admin/passing-but-outcome-gap-alerts.md
+    - ILS Concepts:
+        - concepts/ils-vs-lms.md
+        - concepts/outcome-mastery.md
+        - concepts/universal-outcome-model.md
+        - concepts/data-model.md
+        - concepts/snapshot-lifecycle.md
+        - concepts/trend-direction-confidence.md
+        - concepts/at-risk-detection.md
+        - concepts/heatmap-interpretation.md
+    - Processes:
+        - How the School System Works: processes/how-the-school-system-works.md
+        - Guide Illustration Checklist: processes/guide-illustration-checklist.md
+        - Daily Checkpoint: processes/daily-checkpoint.md
+    - Phase 5:
+        - "Calendar (Epic #122)": phase5/calendar.md
+        - "Process Engine (Epic #127)": phase5/process-engine.md
+    - Teacher Guide:
+        - teacher/index.md
+        - teacher/cockpit.md
+        - teacher/heatmap.md
+        - teacher/classroom-intelligence.md
+        - teacher/grading.md
+        - teacher/teacher-roster.md
+        - Module Composer — Locks & Sequencing: teacher/module-composer.md
+        - Calendar & Events: teacher/calendar-events.md
+        - teacher/interventions.md
+        - Student Intelligence Panel: teacher/student-intelligence-panel.md
+        - teacher/faq.md
+        - SLB / Mentor Quick Guide: teacher/slb.md
+        - Account Settings: teacher/account-settings.md
+        - Notifications: teacher/notifications.md
+        - Timetable & Makeup Sessions: teacher/timetable.md
+    - Appendix:
+        - "Tactical checklists, one-pagers, and playbooks (unlisted)":
+            - admin/timetable-engine-test-checklist.md
+            - marketing/internship-log-intelligence-one-pager.md
+            - marketing/internship-log-intelligence-sales-deck-outline.md
+            - marketing/internship-log-intelligence.md
+            - teacher/reteach-decision-playbook.md
+    - Student Guide:
+        - student/index.md
+        - student/courses.md
+        - student/curriculum.md
+        - student/submissions.md
+        - student/assignment.md
+        - student/quiz.md
+        - student/dashboard.md
+        - Internships: student/internships-quickstart.md
+        - Student Calendar: student/calendar.md
+        - student/outcomes.md
+        - student/feedback.md
+    - Marketing:
+        - marketing/index.md
+        - marketing/from-intuition-to-evidence.md
+        - marketing/core-positioning-from-guessing-to-knowing.md
+        - marketing/mbo-learning-improvement-engine.md
+        - marketing/lms-migration-upgrade-not-import.md
+        - marketing/process-engine-decision-engine.md
+        - marketing/internship-lifecycle-triangular-actors.md
+        - Feature Highlights: marketing/feature-highlights.md
+        - Module Composer: marketing/module-composer.md
+        - Dashboards: marketing/dashboards.md
+        - Calendar: marketing/calendar.md
 
 markdown_extensions:
-  - admonition
-  - pymdownx.highlight
-  - pymdownx.superfences
+    - admonition
+    - pymdownx.highlight
+    - pymdownx.superfences
