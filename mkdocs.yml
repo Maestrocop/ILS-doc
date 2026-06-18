@@ -78,6 +78,7 @@ nav:
             - Overview: admin/curriculum-v2.md
             - Curriculum Entry (OP1): admin/curriculum-entry-op1.md
             - End-to-End Setup Guide: admin/end-to-end-setup-guide.md
+        - Curriculum Structure Guidance: admin/curriculum-structure-guidance.md
         - Quizzes: admin/quizzes.md
         - Projects: admin/projects.md
         - Internships: admin/internships.md
