@@ -6,7 +6,7 @@
 
 ## Student Advisor Assignment (#194)
 
-- **New table**: `student_advisors` (migration 0096) — `student_id`, `user_id`, `advisor_type`, `class_id` (optional scope), `is_primary`, `start_date`, `end_date`
+- **New table**: `student_advisors` — `student_id`, `user_id`, `advisor_type`, `class_id` (optional scope), `is_primary`, `start_date`, `end_date`
 - **Advisor types**: mentor, counselor, career_advisor, internship_coach
 - **Bulk assignment** — assign an advisor to all enrolled students in a class in one click; skips students already assigned for that type
 - **Page**: `Student Advisors` — collapsible class groups, shows advisor badges per group header, active-only by default with history toggle
@@ -19,7 +19,7 @@
 
 ### Quick practical note — No SQL, no migrations
 
-Support staff do NOT need to know migration numbers, raw SQL table names, or internal IDs. The technical note above (`student_advisors`, migration 0096) is for reference only. What matters to you is how to use the UI and which fields affect your day-to-day work (see below).
+Support staff do NOT need to know migration numbers, raw SQL table names, or internal IDs. The technical note above (`student_advisors`) is for reference only. What matters to you is how to use the UI and which fields affect your day-to-day work (see below).
 
 ### What Support needs to know (practical fields)
 
