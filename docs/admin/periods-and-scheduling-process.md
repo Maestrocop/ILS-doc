@@ -1,137 +1,50 @@
-# Periods and Scheduling — Process for Admins, Designers, Teachers
+# Periods and Scheduling — Admin and Designer Workflow
 
-This guide documents the correct step-by-step process and the three-layer defenses to prevent orphan/undated academic periods. This is read-only: no changes will be made to `ILS-dev`.
+## Quick principle
 
-**Intent:** ensure `academic_periods` is the single source of truth and prevent Curriculum Composer or Timetable rules from referencing undated (orphan) periods.
-
----
-
-## Quick summary (one-liner)
-
-Always create dated periods in the Academic Calendar first; then build curriculum; then create timetable rules.
-
----
+Always create academic periods first (in the calendar), then build curriculum around them, then generate timetables from them.
 
 ## Roles and responsibilities
 
-- Admin: create academic years and dated periods on the Periods page; run health checks; fix existing orphaned periods.
-- Designer (Curriculum Composer): assign modules to existing dated `academic_periods` only; do not create new period labels.
-- Teacher: use timetables and session occurrences generated from dated periods; report missing sessions to Admin.
+- **Admin**: Create academic years and periods in the Academic Calendar (with start and end dates).
+- **Curriculum Designer**: Use the Curriculum Composer to assign modules to existing periods from the calendar.
+- **Teacher**: Use the class timetable and sessions generated from the periods and curriculum.
 
----
+## Step-by-step for Admin
 
-## Step-by-step process (for Admin)
+1. Go to **Academic Calendar**
+2. Create an academic year (e.g., "2025–2026")
+3. Under that year, create child periods with concrete dates
+   - Example: "Semester 1" (Sep 2025 – Feb 2026), "Semester 2" (Mar 2026 – Aug 2026)
+4. Save and verify dates are visible on the Periods page
+5. Run the **Setup Health** check to confirm all periods have valid dates
 
-1. Open Academic Calendar → create the academic year (e.g. 2025-2026) if missing.
-2. Under that year, create child periods with concrete `start_date` and `end_date` (e.g. Semester 1 Sep 2025–Feb 2026).
-3. Verify dates visually on the Periods page and confirm parent/child relationship.
-4. Run the Setup Health check (see Health checks below) to find any undated periods and course_structure references.
-5. If orphaned periods exist (undated): decide remediation strategy — either add dates and parent them to the correct year, or migrate referencing course_structure rows to the correct dated period IDs.
+## Step-by-step for Curriculum Designer
 
----
+1. Before opening the Curriculum Composer, confirm the target academic year and its periods exist in the Academic Calendar
+2. In the Curriculum Composer, use the **Period dropdown** to select from dated calendar periods
+3. Do **not** create new periods inside the Composer — if a period is missing, ask Admin to create it in the Academic Calendar
+4. Save your course structure
 
-## Step-by-step process (for Curriculum Designer)
+## Step-by-step for Teacher
 
-1. Before opening Curriculum Composer, confirm the target academic year and its dated periods exist on the Periods page.
-2. In Curriculum Composer, use the period-picker dropdown and choose from the dated academic_periods only.
-3. Do not create or type new period labels in the Composer; if the needed period is missing, stop and request Admin to create it.
-4. Save the course structure and verify the course_structure rows reference the correct `academic_periods` IDs (Admin can verify with Health page if needed).
+1. Use the class timetable and session list (these are generated from the periods and curriculum)
+2. If expected sessions are missing: contact Admin with your class ID and a screenshot
+3. For one-off changes (cancellations, makeups), edit the individual session occurrence (not the curriculum structure)
 
----
+## If periods are missing or incomplete
 
-## Step-by-step process (for Teacher)
+**Symptom**: "Timetable generation not working" or "No sessions appearing for my class."
 
-1. Use the class timetable and session list derived from schedule rules.
-2. If expected sessions are not generated: notify Admin with the class id and a screenshot. Admin will run the Health check to confirm periods used by the course structure are dated.
-3. For cancellations, makeups and one-off edits, prefer editing the session occurrence (not the curriculum) to avoid accidental structural changes.
+**Cause**: Academic periods may be missing dates or are not properly linked to the academic year.
 
----
+**Fix**:
+1. Go to **Academic Calendar**
+2. Verify the year and periods have start and end dates
+3. If a period is undated, edit it and add dates
+4. Run **Setup Health** check to validate
+5. Regenerate timetable rules if needed
 
-## Three layers of defense (product + infra)
+## Key rule: Always create calendar first
 
-1. UI: make the wrong thing impossible
-
-- Curriculum Composer period picker must only list `academic_periods` where `start_date IS NOT NULL`.
-- No in-place “create period” option inside Composer. If missing, direct users to Periods page.
-- Timetable rule modal and schedule matrix should filter out undated periods.
-
-2. API: validate at the boundary
-
-- All API endpoints that create or update `course_structure` or `timetable_schedule_rules` must validate the referenced `academic_periods` have non-null `start_date` and `end_date`.
-- If validation fails, return `400 Bad Request` with message: "Period has no dates. Set dates in Academic Calendar first."
-
-3. Health/Setup checks: surface and help remediate existing damage
-
-- Admin Setup Health page should include checks:
-  - `academic_periods` rows where `start_date IS NULL` → label `Undated period`
-  - `course_structure` rows referencing undated periods → list modules and course ids
-  - `timetable_schedule_rules` referencing undated periods → list rules generating 0 sessions
-- Health page should offer remediation hints: add dates (if the period is legitimate), or migrate course_structure references to a correct dated period.
-
----
-
-## Remediation options (how to fix existing orphan records)
-
-Option A — Add dates and parent to correct year
-
-1. If the orphan label (e.g. Period-1) was intended to be part of 2025-2026, add `start_date`/`end_date` and set parent to the 2025-2026 year.
-2. Run health check and re-run timetable generation for the affected class.
-
-Option B — Repoint course structure to existing dated periods
-
-1. If the course actually uses Semester 1 + Semester 2, update the `course_structure` entries to reference the semester period IDs.
-2. Verify by running timetable generation; sessions should appear for the date ranges.
-
-Option C — Delete orphan periods (only if safe)
-
-1. If an orphan period is unused except for a small number of mistaken course_structure rows, consider migrating those rows then deleting the orphan record.
-2. Always backup DB and run migration scripts defensively.
-
----
-
-## Implementation details (what the system does today)
-
-These notes reflect the current `ILS-dev` implementation so admins know which APIs and pages can create or remediate orphan periods. This is informational only — I will not change `ILS-dev`.
-
-- Composer can create course-scoped periods via `POST /api/curriculum/courses/:courseId/periods`. That endpoint accepts `start_date` and `end_date` but does not require them, so null-dated periods can be created.
-- Course structure writes (`POST /api/curriculum/courses/:courseId/structure`, `PATCH /api/curriculum/structure/:id`) accept a `period_id` and currently do not validate that the referenced `academic_periods` row has non-null dates.
-- There is a best-effort mapping routine `syncCourseTimeline()` that attempts to map composer period names back to calendar periods by name + parent year; this mapping is NOT a reliable guard against orphans.
-- The Periods admin endpoints are `GET /api/periods`, `GET /api/periods/tree`, `POST /api/periods`, `PUT /api/periods/:id`, and `DELETE /api/periods/:id` (admin-only). Use these to add dates or remove orphan records.
-
-Recommended immediate admin action: use the queries from the Admin Health Checks page to identify undated rows, then either add `start_date`/`end_date` and parent them to the correct academic year, or re-point `course_structure` rows to the correct dated period ids.
-
----
-
-## Policy (process rule to include in onboarding)
-
-ALWAYS in this order:
-
-1. Academic Calendar → create year + dated periods
-2. Curriculum Composer → assign modules to those dated periods
-3. Timetable → create rules referencing those dated periods
-
-If Step 1 is skipped, Steps 2–3 must be blocked by UI/API validation.
-
----
-
-## Suggested rollout order (practical roadmap)
-
-1. Implement UI filter in Composer (prevent new orphans) — highest impact
-2. Add API validation for course_structure and rules — defensive
-3. Add Health checks and remediation UI — visibility and cleanups
-
----
-
-## FAQ
-
-Q: Who owns the decision to create Periods vs Semesters for a given program?
-
-A: Academic Admin (Registrar/Program Lead). Designers must follow the academic calendar established by Admin.
-
-Q: Can Curriculum Composer create periods if missing?
-
-A: No. Composer must not create periods. It should only reference dated `academic_periods` — this prevents ghost periods.
-
----
-
-If you want, I can also add a short checklist page for day-to-day Admin health checks and a sample SQL query to find orphan periods. I will not change `ILS-dev` — only write docs under `ILS-doc`.
+Do NOT skip creating academic calendar periods, and do NOT ask Curriculum Composer to create them. Calendar setup is the foundation for the entire timetable and curriculum flow.
