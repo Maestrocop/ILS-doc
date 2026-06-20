@@ -1,14 +1,34 @@
-# Progression Review — UI Reference (Coordinator Dashboard)
+# Progression Review — Coordinator Dashboard
 
-## Coordinator dashboard — interpretation notes
+The coordinator dashboard displays progression review statistics and helps identify where action is needed.
 
-What the coordinator takes from the dashboard (example interpretation):
+## Reading the dashboard
 
-- **MOD - BIM Fundamentals** is the one to act on — 20 students, 20% pass rate, reliable signal. Raise it in the program meeting.
-- **Service Management Basis** — 15 students, 40% — secondary concern.
-- Everything else is starred — coordinators should not treat those percentages as program-level signals.
-- Callout is clean — anonymised, with a clear next step.
+**Module Performance Overview:**
+- Shows per-course pass rates and student counts
+- Highlights courses requiring attention (below pass threshold)
+- Identifies structural curriculum concerns vs temporary cohort issues
 
-The small‑N footnote is present and intentional: it does not hide data, but it flags small samples so a coordinator does not treat a 100% pass rate from 1 student the same as a 40% pass rate from 15 students.
+**How to interpret together:**
 
-This section is a factual summary of the dashboard's UI and the intended coordinator interpretation. It documents what exists in the codebase and the present UI behaviour. No changes are made to `ILS-dev`.
+The dashboard provides two complementary views:
+
+- **Cohort Health** — Are students performing well right now?
+- **Module Quality** — Are modules structurally weak across the curriculum?
+
+Read together to diagnose the source of issues:
+
+- **Modules failing + cohort struggling** → curriculum and assessment issue
+- **Modules passing + cohort struggling** → cohort selection, support, or external issue
+- **Modules failing + cohort healthy** → curriculum needs review
+
+## Small sample note
+
+Programs with very few active students are marked to avoid treating small-sample pass rates (e.g., 100% from 1 student) as reliable signals. This is intentional and helps managers focus on actionable data.
+
+## Who uses this
+
+- Program managers
+- Curriculum leads
+- Coordinators
+- Education managers

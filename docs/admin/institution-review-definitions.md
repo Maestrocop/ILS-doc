@@ -1,33 +1,52 @@
-# Institution-specific Review Definitions — Summary
+# Institution Review Definitions
 
-This document describes the existing implementation for institution-scoped progression review definitions. It is a factual summary of what exists in the codebase and where to find it; it does not change any code in `ILS-dev`.
+Each institution can configure its own progression review types and policies.
 
-## What exists
+## What you can do
 
-- Definitions are represented by the `ProgressionReviewDefinition` model and stored in `progression_review_definitions`.
-- Definitions may be scoped to an `institution_id`; when present, lookups prefer institution-level definitions for classes belonging to that institution.
-- Definitions include configuration fields such as `local_name`, `description`, `trigger_months`, `is_binding`, `applicable_year`, `available_outcomes`, thresholds, decision stages, and UI labels.
-- Per-definition policy flags and required evidence codes are stored in `progression_review_decision_policies` and related fields on the definition (e.g., `required_evidence_types`, `binding_required_types`).
+Go to **Settings** or **Review Definitions** to:
 
-## How the code resolves definitions
+- Create and configure review types for your institution
+- Define decision thresholds and stages
+- Set required evidence for binding decisions
+- Configure event and action types
+- Upload policy documents and guidelines
+- Set applicable academic years
 
-- `backend/lib/reviewDefinition.js` provides `getDefinitionForClass(sequelize, classId)` which returns the active `ProgressionReviewDefinition` for a given class — it falls back from class → module → course → institution.
-- The helper `getPassThreshold(sequelize, classId, fallback)` returns a threshold value (warning/decision threshold) for use in server-side computations and dashboards.
+## Configuration options
 
-## Admin UI
+**Review Type Settings:**
+- Local name (e.g., "BSA", "Progression Review", "Advancement Assessment")
+- Description and purpose
+- Trigger months and timing
+- Binding decision indicator
+- Applicable academic year
+- Available learning outcomes for review
+- Active status
 
-- The `ProgressionReviewDefinitionsTab` component in the frontend allows admins to create and edit definitions, set decision stages (2 or 3), define thresholds, and upload policy documents.
-- Event types and action types are configurable per definition via the UI and persisted through the API endpoints under `/api/progression-reviews/definitions`.
+**Decision Policy:**
+- Number of decision stages (2 or 3)
+- Warning threshold
+- Decision threshold
+- Required evidence types before negative decision
+- Required evidence types before binding decision
 
-## Seeds and examples
+**Event & Action Types:**
+- Create custom event types (meetings, warnings, referrals)
+- Create custom action types (tasks, assignments, appointments)
+- Set visibility (student-visible or internal)
+- Define decision stages
 
-- `backend/scripts/seed_progression_definition.cjs` seeds an example BSA definition for an institution and creates an associated `progression_review_decision_policies` row.
+## How it works
 
-## Where to find the code
+When a review is created for a student, the system uses the institutional definition to:
 
-- `ILS-dev/backend/models/ProgressionReviewDefinition.js`
-- `ILS-dev/backend/lib/reviewDefinition.js`
-- `ILS-dev/backend/scripts/seed_progression_definition.cjs`
-- `ILS-dev/frontend/src/components/ProgressionReviewDefinitionsTab.jsx`
+- Determine which review type applies
+- Check policy requirements before allowing decisions
+- Enforce required evidence collection
+- Validate decision stages
+- Apply institutional thresholds
 
-This page documents existing functionality only. No edits are made to `ILS-dev` by this file.
+## Scope
+
+Definitions are scoped to institutions, so each organization can have different review processes and policies that match local regulations and requirements.
