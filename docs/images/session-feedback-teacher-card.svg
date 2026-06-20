@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="120" viewBox="0 0 800 120">
+  <rect width="800" height="120" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="20" y="28" font-family="Arial" font-size="16" fill="#111827">BK-J1-2526 — Mon 09:00–12:00</text>
+  <text x="20" y="52" font-family="Arial" font-size="14" fill="#374151">Module: Inleiding Bedrijfskunde</text>
+  <rect x="580" y="24" width="140" height="32" rx="6" fill="#0369a1" />
+  <text x="620" y="46" font-family="Arial" font-size="14" fill="#ffffff" text-anchor="middle">Request Feedback</text>
+  <text x="20" y="84" font-family="Arial" font-size="12" fill="#6b7280">Teacher: J. de Vries</text>
+  <text x="20" y="102" font-family="Arial" font-size="12" fill="#6b7280">Status: Scheduled · Feedback: Not requested</text>
+</svg>

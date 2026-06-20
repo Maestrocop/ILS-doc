@@ -21,11 +21,9 @@ Session: Mon 09:00–12:00 — Inleiding Bedrijfskunde
 
 How clear was today's lesson?
 
-- ( ) 1  ( ) 2  ( ) 3  ( ) 4  ( ) 5
 
 How engaged were you?
 
-- ( ) 1  ( ) 2  ( ) 3  ( ) 4  ( ) 5
 
 What remains unclear? (optional)
 
@@ -35,10 +33,16 @@ _Free text input_
 
 ## Quick analytics (teacher/coordinator)
 
-- Per-session average clarity and engagement (numbers + sparkline)
-- Flags: any free-text mention of "unclear", "missed", "homework", or scores below 2
-- Export CSV or link to Intelligence Hub for deeper analysis
 
+## Visual mockups
+
+Teacher session card (click `Request Feedback`):
+
+![Teacher session card](../images/session-feedback-teacher-card.svg)
+
+Student modal (mobile-friendly):
+
+![Student session modal](../images/session-feedback-student-modal.svg)
 ## Minimal API sketch (docs-only)
 
 - POST `/api/feedback/session/:sessionId/request` — mark session feedback requested and enqueue notifications
