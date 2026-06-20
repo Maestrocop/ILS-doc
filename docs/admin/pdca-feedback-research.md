@@ -49,7 +49,7 @@ Create a future domain: `Feedback & Research` containing:
 - Question Bank (reusable items)
 - Survey Analytics & Reports
 
-This domain should be logically separate from curriculum/timetable but integrate with them via clear references (session_id, module_id, course_id, class_id, student_id).
+This domain should be logically separate from curriculum and timetable but integrate with them.
 
 ---
 
@@ -59,16 +59,6 @@ This domain should be logically separate from curriculum/timetable but integrate
 2. Do: Teacher delivers Session S for Module A (timetable session generated from schedule rules).
 3. Check: Teacher requests session feedback; students respond; analytics surface low clarity or engagement scores.
 4. Act: Designer updates Module A (re-sequencing, rubrics), or Teacher adjusts lesson plan; changes get re-deployed in Composer; PDCA repeats.
-
----
-
-## Minimal data model sketch (docs-only)
-
-- session_feedback: id, session_id, student_id, clarity_score, engagement_score, comments, created_at
-- surveys: id, type (module/course/institution), created_by, active_from, active_until
-- survey_responses: id, survey_id, respondent_id, answers(jsonb), created_at
-
-Linking keys: `session_id` → sessions; `module_id`/`course_id` → course_structure/modules.
 
 ---
 

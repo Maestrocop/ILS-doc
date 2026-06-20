@@ -1,49 +1,47 @@
-# Progression Review — End-to-End Walkthrough (what exists)
+# Progression Review — Admin Workflow
 
-This document describes the existing end-to-end flow implemented in the codebase for progression reviews (BSA). It is a read-only summary of the sequence of components and data flows; it does not propose changes.
+## What is a Progression Review?
 
-1. Definition creation
-   - Admins create a `ProgressionReviewDefinition` via `POST /api/progression-reviews/definitions` or the `ProgressionReviewDefinitionsTab` UI.
-   - Definitions include decision stages, thresholds, evidence policy codes, and optional PDF policy documents. A `progression_review_decision_policies` row may be created alongside the definition.
+A Progression Review (also called a BSA — Board of Student Affairs review) is a formal assessment of a student's progress toward graduation. It combines evidence from assignments, quizzes, and project work with professional judgment to make decisions about the student's status: continue, support with intervention, transfer, or exit.
 
-2. Seeding / Backfill (optional ops)
-   - The repository includes `backend/scripts/seed_progression_definition.cjs` to insert a canonical BSA definition and `backend/scripts/backfill_outcome_snapshots.cjs` to generate historical `student_outcome_snapshots`.
+## Your role as an admin
 
-3. Triggering a review
-   - Reviews can be started manually via the UI (`ProgressionReviewsPage`) or programmatically by institution logic (not modified here).
-   - Creating a `ProgressionReviewInstance` stores student, class, owner, status, due_date, and policy-related fields.
+Admins set up the **framework** for reviews. Once defined, coordinators and mentors use it to conduct individual reviews.
 
-4. Evidence aggregation and snapshots
-   - When graded submissions, quizzes, or project tasks are processed, `backend/lib/snapshotWriter.js` writes outcome snapshots via `writeOutcomeSnapshots`, `writeQuizOutcomeSnapshots`, and `writeProjectTaskOutcomeSnapshots`.
-   - Snapshots are stored in `student_outcome_snapshots` and related evidence rows are written to `sos_evidence` and `sos_params`.
+## Step 1: Create a Review Definition
 
-5. Dashboards and coordinator views
-   - Coordinator and SLB dashboards fetch cohort stats from `GET /api/progression-reviews/coordinator-stats` and `/slb-stats`.
-   - Frontend pages `BSACoordinatorDashboard.jsx` and `ProgressionReviewsPage.jsx` display KPIs, status distributions, per-program charts, and lists used for actioning reviews.
+1. Go to **Settings → Progression Review Definitions**
+2. Click **Create Definition**
+3. Set up the framework:
+   - **Name**: e.g., "BSA 2026 – Year 3 Completion Review"
+   - **Decision Stages**: Typical stages include **Assessment** → **Intervention** → **Decision**
+   - **Thresholds**: e.g., "students with >3 failing outcomes are flagged for intervention"
+   - **Evidence Requirements**: before issuing a binding decision (transfer/exit), what evidence must be collected? E.g., "warning issued", "intervention plan documented", "student acknowledgment recorded"
+   - **Optional Policy Document**: upload a PDF outlining the institutional policy for this review cycle
 
-6. Actions, events, and improvement plans
-   - Event types and action types are defined per `ProgressionReviewDefinition` and managed via the `ProgressionReviewDefinitionsTab` UI.
-   - Actions and timeline events are stored on the review instance (models and API endpoints manage create/update of actions and events).
+4. Save
 
-7. Decision policy enforcement
-   - Before issuing a negative or binding decision (e.g., `transfer`, `exit`), server-side helper `checkDecisionPolicy` verifies required evidence (warning, intervention, acknowledgment) exists per the definition's policy.
+## Step 2: Monitor Reviews via Coordinator Dashboard
 
-8. Final decision and recording
-   - Decisions are recorded on `ProgressionReviewInstance` (`decision`, `decision_reason`, `decided_at`). Frontend pages show status and decision labels to users and coordinators.
+1. Go to **Student Support → Progression Reviews**
+2. View cohort-level statistics:
+   - Number of reviews in progress, completed, overdue
+   - Per-program breakdown
+   - KPIs tracking overall cohort health
 
-9. Alerts and reports
-   - Alerts endpoints (`backend/routes/alerts.js`) provide coordinator-scoped reports (overdue reviews, students without advisors, grading backlog) used by dashboards.
+3. Click on a class or program to drill down
+4. View individual student reviews and their status (not yet started, in progress, completed)
 
-Source files referenced (examples):
-- `ILS-dev/backend/models/ProgressionReviewDefinition.js`
-- `ILS-dev/backend/models/ProgressionReviewInstance.js`
-- `ILS-dev/backend/lib/snapshotWriter.js`
-- `ILS-dev/backend/routes/progressionReviews.js`
-- `ILS-dev/backend/scripts/seed_progression_definition.cjs`
-- `ILS-dev/backend/scripts/backfill_outcome_snapshots.cjs`
-- `ILS-dev/frontend/src/pages/ProgressionReviewsPage.jsx`
-- `ILS-dev/frontend/src/pages/BSACoordinatorDashboard.jsx`
-- `ILS-dev/frontend/src/pages/MyBSAReviewPage.jsx`
-- `ILS-dev/frontend/src/components/ProgressionReviewDefinitionsTab.jsx`
+## Step 3: Understand the Review Timeline
 
-This is a factual walkthrough of implemented components only; no changes are made to `ILS-dev`.
+Once a definition is active, coordinators can trigger reviews. The system automatically:
+- Pulls evidence from all graded work (assignments, quizzes, projects)
+- Calculates student learning outcome snapshots (based on rubric grades)
+- Surfaces alerts if a student is at risk (e.g., multiple failing outcomes, missing prerequisites)
+- Tracks decision requirements (e.g., "decision cannot be issued until intervention plan is documented")
+
+## Key Policies to Know
+
+- **Evidence Rule**: Before issuing a transfer or exit decision, the system enforces the decision policy. All required evidence (warning issued, intervention documented, student acknowledgment) must be present.
+- **Mentor Assignment**: Only a student's assigned mentor can open a review for that student. See [Setting Up a Mentor](setting-up-mentor.md) for role and assignment setup.
+- **Status Tracking**: Each review has a clear status (not started, in progress, completed) visible to all stakeholders. Overdue reviews are flagged in the dashboard.
