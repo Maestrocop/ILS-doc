@@ -102,6 +102,7 @@ nav:
         - PDCA & Feedback: admin/pdca-feedback-research.md
         - PDCA Poster: admin/pdca-poster.md
         - Session Feedback Mockup: admin/session-feedback-mockup.md
+        - Session Feedback RFC: admin/session-feedback-spec.md
         - Student Support: admin/student-support.md
         - Passing-but-Outcome-Gap Alerts: admin/passing-but-outcome-gap-alerts.md
     - ILS Concepts:
