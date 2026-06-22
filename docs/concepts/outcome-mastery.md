@@ -1,29 +1,44 @@
-# Outcome Mastery
+# Outcome Mastery vs Grade
 
-Outcome mastery is the primary score that ILS uses to represent student learning proficiency.
+Clear explanation of the two-layer assessment model used by ILS: the overall Grade (summative) and Outcome Mastery (diagnostic).
 
-## What it measures
+## Layer 1 — The Grade (fixed)
 
-- Mastery is a normalized score for a specific learning outcome.
-- It is derived from student work that is linked to that outcome through assignments and rubrics.
-- The score is usually expressed on a 0–10 scale.
+- Purpose: A single-number summary of overall performance
+- Use: Answers "Is this student passing?" and is shown prominently across the UI
 
-## How it is calculated
+Example: An average grade of 66.7 / 100 — shown as THE grade.
 
-1. A submission is graded using a rubric tied to one or more outcomes.
-2. Each rubric criterion receives a rating.
-3. The ratings are aggregated to compute a score for that submission.
-4. Submission scores are mapped to outcome mastery.
+## Layer 2 — Outcome Mastery (diagnostic)
 
-### Example flow
+- Purpose: Skill-level scores for specific outcomes or competencies
+- Use: Answers "Which specific skills is this student missing?" and helps detect hidden gaps
 
-- An assignment contains a rubric with 5 criteria.
-- Each criterion is rated on a defined scale.
-- The rubric produces an overall assignment score.
-- The assignment score is converted into a mastery value for each linked outcome.
+Example:
+- Outcome: Scientific Method = 3.3 / 10 ← problem
+- Outcome: Data Analysis = 8.3 / 10 ← strong
+
+## Why both layers matter
+
+A student can pass overall yet still lack key skills on specific outcomes. Outcome Mastery reveals those gaps so teachers can target remediation before the student advances.
+
+## How outcome mastery is calculated
+
+1. A submission is graded using a rubric tied to learning outcomes
+2. Each rubric criterion receives a rating
+3. The ratings are aggregated to create a score for that submission
+4. The submission score updates the student's outcome mastery
+5. The system tracks this score over time to show trends
+
+## Reading the numbers
+
+Outcome mastery scores are typically on a 0–10 scale:
+- **Below 4.0**: significantly below target (needs intervention)
+- **4.0–6.9**: approaching target (continue practice)
+- **7.0–10**: at or above target (strength)
 
 ## Why it matters
 
-- Mastery scores allow the system to compare students fairly across different assignments.
-- They provide the basis for snapshots, trends, heatmaps, and at-risk detection.
-- Teachers use mastery as a normalized indicator of whether a student is meeting the intended outcome.
+- Mastery scores allow the system to compare students fairly across different assignments
+- They provide the basis for snapshots, trends, heatmaps, and at-risk detection
+- Teachers use mastery as a normalized indicator of whether a student is meeting the intended outcome
