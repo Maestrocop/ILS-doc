@@ -51,6 +51,14 @@ nav:
             - Glossary: developer/glossary.md
     - Admin Guide:
         - Admin Overview: admin/index.md
+        - Quick Start: admin/quickstart.md
+        - End-to-End Setup Guide: admin/end-to-end-setup-guide.md
+        - Security & Compliance: admin/security-and-compliance.md
+        - Data Exchange: admin/data-exchange.md
+        - ImportShell: admin/import-shell.md
+        - Templates: admin/templates-guidelines.md
+        - Import Report: admin/import-report.md
+        - Permissions: admin/permissions.md
         - Institutions: admin/institutions.md
         - Campuses: admin/campuses.md
         - Courses & Modules: admin/courses-modules.md
@@ -69,15 +77,11 @@ nav:
         - Mapping Matrix: admin/mapping-matrix.md
         - Audit Logs: admin/audit-logs.md
         - Setup Health: admin/setup-health.md
-        - Periods & Scheduling: admin/periods-and-scheduling-process.md
-        - Admin Health Checks: admin/admin-health-checks.md
-        - Timetable Engine Walkthrough: admin/timetable-engine-walkthrough.md
         - Teacher Dashboard: admin/teacher-dashboard.md
         - Curriculum Composer: admin/curriculum.md
         - Curriculum Composer V2:
             - Overview: admin/curriculum-v2.md
             - Curriculum Entry (OP1): admin/curriculum-entry-op1.md
-            - End-to-End Setup Guide: admin/end-to-end-setup-guide.md
         - Curriculum Structure Guidance: admin/curriculum-structure-guidance.md
         - Quizzes: admin/quizzes.md
         - Projects: admin/projects.md
@@ -94,6 +98,14 @@ nav:
         - Curriculum Composer vs Class Setup: admin/curriculum-composer-vs-class-setup.md
         - Assignments: admin/assignments.md
         - Progression Review Test Guide: admin/progression-review-test-guide.md
+        - Progression Review — Design: admin/progression-review-design.md
+        - Progression Review — Implementation: admin/progression-review-implementation.md
+        - Progression Review — UI: admin/progression-review-ui.md
+        - Intelligence Hub: admin/intelligence-hub.md
+        - Curriculum Effectiveness: admin/curriculum-effectiveness.md
+        - Institution Review Definitions: admin/institution-review-definitions.md
+        - End-to-End Walkthrough: admin/end-to-end-walkthrough.md
+        - Setting Up a Mentor: admin/setting-up-mentor.md
         - Settings & Reporting Rules: admin/settings.md
         - Curriculum Composer Guide: admin/curriculum-composer-guide.md
         - BSA Multi-Institution: admin/bsa-multi-institution.md
@@ -118,17 +130,58 @@ nav:
         - How the School System Works: processes/how-the-school-system-works.md
         - Guide Illustration Checklist: processes/guide-illustration-checklist.md
         - Daily Checkpoint: processes/daily-checkpoint.md
+    - Internal:
+        - Internal Index: internal/index.md
+        - Unlisted Pages Archive: internal/unlisted-archive.md
+        - Policies:
+            - Account & Password: internal/account-and-password-management.md
+            - Cookie Policy: internal/cookie-policy.md
+            - Privacy & Your Data: internal/privacy-and-your-data.md
+            - Terms of Service: internal/terms-of-service.md
+        - Reports:
+            - Last Updated Audit: internal/last-updated-audit.md
+            - Audit: internal/audit-english-docs.md
+        - Glossary: internal/glossary.md
+        - Translation & Localization: internal/translation-localization.md
+    - User Guides:
+        - Teachers:
+            - Overview: user/teachers.md
+            - Gradebook: user/teachers/gradebook.md
+            - Imports: user/teachers/imports.md
+            - Outcomes: user/teachers/outcomes.md
+            - FAQs: user/teachers/faqs.md
+        - Students:
+            - Overview: user/students.md
+            - Submitting: user/students/submitting.md
+            - Viewing Grades: user/students/viewing-grades.md
+            - Progress: user/students/progress.md
+        - Coordinators:
+            - Overview: user/coordinators.md
+            - Programs: user/coordinators/programs.md
+            - Reports: user/coordinators/reports.md
+            - Notifications: user/coordinators/notifications.md
+        - Admins:
+            - Overview: user/admins.md
+            - Data Exchange: user/admins/data-exchange.md
+            - ImportShell: user/admins/importshell.md
+            - Templates: user/admins/templates.md
+            - Backups: user/admins/backups.md
     - Phase 5:
         - "Calendar (Epic #122)": phase5/calendar.md
         - "Process Engine (Epic #127)": phase5/process-engine.md
     - Teacher Guide:
+        - Quick Start: teacher/quickstart.md
         - teacher/index.md
+        - teacher/outcomes.md
         - teacher/cockpit.md
         - teacher/heatmap.md
         - teacher/classroom-intelligence.md
         - teacher/grading.md
         - teacher/teacher-roster.md
         - Module Composer — Locks & Sequencing: teacher/module-composer.md
+        - Delivery Planner: teacher/delivery-planner.md
+        - Module Sequencing: teacher/module-sequencing.md
+        - Delivery Examples: teacher/delivery-examples.md
         - Calendar & Events: teacher/calendar-events.md
         - teacher/interventions.md
         - Student Intelligence Panel: teacher/student-intelligence-panel.md
@@ -137,6 +190,7 @@ nav:
         - Account Settings: teacher/account-settings.md
         - Notifications: teacher/notifications.md
         - Timetable & Makeup Sessions: teacher/timetable.md
+        - Data Exchange: admin/data-exchange.md
     - Appendix:
         - "Tactical checklists, one-pagers, and playbooks (unlisted)":
             - admin/timetable-engine-test-checklist.md
@@ -146,6 +200,10 @@ nav:
             - teacher/reteach-decision-playbook.md
     - Student Guide:
         - student/index.md
+        - Quick Start: student/quickstart.md
+        - Submission Workflow: student/submission-workflow.md
+        - Calendar: student/calendar.md
+        - Viewing Feedback: student/feedback.md
         - student/courses.md
         - student/curriculum.md
         - student/submissions.md
@@ -153,9 +211,7 @@ nav:
         - student/quiz.md
         - student/dashboard.md
         - Internships: student/internships-quickstart.md
-        - Student Calendar: student/calendar.md
         - student/outcomes.md
-        - student/feedback.md
     - Marketing:
         - marketing/index.md
         - marketing/from-intuition-to-evidence.md
@@ -168,6 +224,25 @@ nav:
         - Module Composer: marketing/module-composer.md
         - Dashboards: marketing/dashboards.md
         - Calendar: marketing/calendar.md
+    - Coordinator:
+        - Quick Start: coordinator/quickstart.md
+        - Weekly Workflow: coordinator/weekly-workflow.md
+        - Programme Health: coordinator/programme-health.md
+        - Decision Layer Guidelines: coordinator/decision-layer-guidelines.md
+        - Roadmap Tasks: coordinator/roadmap-tasks.md
+        - Intervention Note Spec: coordinator/intervention-note-spec.md
+        - Issue Templates: coordinator/issue-templates.md
+        - Reminder Rules: coordinator/reminder-rules.md
+        - Escalation Matrix: coordinator/escalation-matrix.md
+        - Reminder Engine Spec: coordinator/reminder-engine-spec.md
+        - Data Exchange: admin/data-exchange.md
+        - ImportShell Mockup: admin/import-shell-mockup.md
+        - Outcomes Importer Spec: admin/outcomes-importer-spec.md
+        - Outcomes Template (v1): admin/templates/outcomes_template_v1.csv
+        - Outcomes API Contract: admin/outcomes-importer-api.md
+        - Outcomes Schema: admin/schemas/outcomes-import-schema.json
+        - Outcomes Responses: admin/outcomes-sample-responses.md
+        - Outcomes Dev README: admin/outcomes-importer-dev-readme.md
 
 markdown_extensions:
     - admonition
