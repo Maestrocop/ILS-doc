@@ -67,3 +67,6 @@ This helps teachers understand why a specific action was suggested.
 
 The most useful recommendations come when there is enough graded work.
 If the report says there is not enough evidence, prioritize grading pending submissions first.
+
+
+**Last updated:** 2026-07-08

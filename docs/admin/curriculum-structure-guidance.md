@@ -32,3 +32,6 @@ Separate the WHAT (curriculum structure) from the WHEN (academic calendar). Keep
 Add guidance near curriculum controls:
 
 > "Organise modules into curriculum blocks or themes. Blocks help structure the learning journey and group related modules. Blocks do not define dates or schedules. Scheduling is managed separately through the Academic Calendar and Timetable."
+
+
+**Last updated:** 2026-07-08

@@ -37,3 +37,6 @@ Go to **Modules** in the admin menu to:
 - **Modules** are the primary unit of curriculum delivery
 - Teachers and students work primarily with modules
 - Modules can be published to teachers once their outcomes and assessments are configured
+
+
+**Last updated:** 2026-07-08

@@ -421,3 +421,5 @@ Combined, these layers produce strategic intelligence instead of operational int
 - Placement partner learning quality score
 - Skills coverage by sector
 - Time-to-curriculum-adjustment after trend detection
+
+**Last updated:** 2026-07-08

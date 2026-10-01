@@ -1,173 +1,269 @@
-# DEVELOPER_WIKI
+# ILS Developer Wiki
 
-This developer wiki is a Phase A reference for the ILS architecture and developer workflow. It is intentionally technical and focused on implementation, not end-user guidance.
+## ⛔ DOCUMENTATION REPO ONLY ⛔
 
-## 1. Purpose
+This file is in `ILS-doc`. The assistant may ONLY edit files in `ILS-doc`.
 
-This document is the developer entry point for the ILS documentation effort. It should answer:
+**The assistant is FORBIDDEN from editing any file in `ILS-dev`.**
 
-- Why architectural decisions were made
-- Which data model relationships matter most
-- How to set up the local development environment
-- How grading, snapshots, and trends flow through the system
-- Known issues, gotchas, and future maintenance tasks
+If you see this message, you are in the correct directory (`ILS-doc`). Do not cross into `ILS-dev`.
 
-This repo is a docs repository. The application code remains in `ILS-dev`; this wiki references that codebase without modifying it.
 
-## 2. Architecture decisions and rationale
+markdown
+# ILS Developer Wiki
+
+This is the developer reference documentation for the ILS system.
+
+## 1. System Overview
+
+The ILS (Intelligent Learning System) is a modular learning platform with:
+- **Vertical hierarchy**: Institution → Campus → Course → Module → Assignment → Class
+- **Horizontal intelligence layer**: Outcomes, rubrics, criteria, trends, heatmaps
+
+## 2. Technology Stack
 
 ### Backend
+- Node.js with Express
+- Sequelize ORM
+- PostgreSQL database
+- Migration-based schema management
 
-- **Node.js + Express + Sequelize**
-  - Reason: stable ecosystem, familiar ORM patterns, and good migration support.
-  - Rule: migrations are the single source of truth for schema changes.
-  - Rule: `sequelize.sync()` must remain disabled in every environment.
+### Frontend  
+- React 18
+- Vite build tool
+- Tailwind CSS
+- MkDocs for documentation
 
-- **Database-first policy**
-  - All schema changes must be implemented with idempotent SQL migrations under `backend/migrations/`.
-  - Migrations should include existence checks where relevant and avoid destructive operations without rollback strategy.
+## 3. Data Model
 
-- **BigInt serialization**
-  - The backend uses JSON middleware that converts `BigInt` values to strings before sending API responses.
-  - This avoids browser `JSON.stringify()` failures and keeps API output stable.
+### Core Entities
 
-### Frontend
+| Entity | Purpose | Key Fields |
+|--------|---------|------------|
+| Institution | Top-level organization | id, name |
+| Campus | Physical location | id, name, institution_id |
+| Course | Academic course | id, name, campus_id |
+| Module | Course unit | id, title, course_id |
+| Assignment | Graded work | id, title, module_id |
+| Class | Student cohort | id, name, assignment_id |
 
-- **React + Vite + Tailwind CSS**
-  - Reason: fast local feedback loop, lightweight build, and predictable styling.
-  - The frontend is designed to consume the backend API and render dashboards, heatmaps, and teacher workflows.
+### Intelligence Entities
 
-### Separation of concerns
+| Entity | Purpose |
+|--------|---------|
+| Outcome | Measurable learning objective (0-10 mastery scale) |
+| Rubric | Scoring criteria for assignments |
+| Criteria | Individual rubric row items |
+| Theme | Higher-level outcome grouping |
+| Snapshot | Historical mastery score record |
 
-- The system is organized as two coupled domains:
-  - **Vertical hierarchy**: institution → campus → course → module → assignment → class
-  - **Intelligence layer**: outcomes, rubrics, criteria, trends, and heatmaps
-- Keeping these domains separate avoids mixing structural course data with learning analytics.
+### Junction Tables
+- `module_outcomes` - Links modules to outcomes
+- `assignment_outcomes` - Links assignments to outcomes  
+- `assignment_rubrics` - Links assignments to rubrics
+- `module_themes` - Links modules to themes
 
-### Docs workflow
+## 4. API Endpoints
 
-- This documentation repo is intentionally separate from `ILS-dev`.
-- `docs/phase-a-structure` is the current branch for Phase A work.
-- GitHub Project 5 is used to track Phase A and Phase B documentation tasks.
+### Core Routes
+/api/institutions
+/api/campuses
+/api/courses
+/api/modules
+/api/assignments
+/api/themes
+/api/outcomes
+/api/assessment-types
 
-## 3. Glossary of Terms
+text
 
-| Term | Definition |
-|------|------------|
-| Outcome | A measurable learning objective or skill that the system tracks |
-| Mastery Score | A 0–10 score representing outcome proficiency, derived from rubric and submission data |
-| Snapshot | A point-in-time record of a student’s mastery score for a specific outcome |
-| Trend Direction | The direction of change between snapshots: Up, Down, or Flat |
-| Trend Confidence | A confidence category based on snapshot history and score stability |
-| At-Risk | A student whose mastery score is below an applicable success threshold |
-| Cockpit | The teacher-facing dashboard for identifying students and outcomes that need attention |
-| Heatmap | A grid showing student mastery levels across outcomes |
+### Module Endpoints
+- `GET /api/modules` - List all modules
+- `GET /api/modules/:id` - Get single module
+- `POST /api/modules` - Create module
+- `PUT /api/modules/:id` - Update module
+- `DELETE /api/modules/:id` - Delete module
+- `GET /api/modules/:id/items` - Get module structure items
 
-## 4. Data model (key relationships)
+### Assignment Endpoints
+- `GET /api/assignments` - List assignments
+- `GET /api/assignments/:id` - Get single assignment
+- `POST /api/assignments` - Create assignment
+- `PUT /api/assignments/:id` - Update assignment
+- `DELETE /api/assignments/:id` - Delete assignment
 
-The ILS data model is built around two connected domains.
+## 5. Key Workflows
 
-### Vertical structure
+### Grading → Snapshot → Trend
 
-- `institutions` → `campuses` → `courses` → `modules` → `assignments` → `classes`
-- Students are enrolled in classes and submit work against assignments.
+1. Teacher grades submission using rubric criteria
+2. Ratings saved to `submission_ratings` table
+3. Backend aggregates to outcome mastery scores (0-10)
+4. `student_outcome_snapshots` created/updated
+5. Trend calculation compares snapshots:
+   - `trend_direction`: Up/Down/Flat
+   - `trend_confidence`: High/Medium/Low
+   - `delta`: Score change amount
 
-### Intelligence entities
+### Teacher Cockpit Dashboard
 
-- `outcomes` describe what students should learn.
-- `rubrics` define how work is scored.
-- `criteria` are the individual rubric items.
-- `themes` are higher-level groupings of curriculum intelligence.
+The cockpit displays:
+- At-risk students (mastery below threshold)
+- Outcome heatmap grid
+- Trend indicators per student/outcome
+- Intervention recommendations
 
-### Junction tables
+## 6. Development Setup
 
-- `module_outcomes` connects modules to outcomes.
-- `assignment_outcomes` connects assignments to outcomes.
-- `assignment_rubrics` connects assignments to rubrics.
-- `module_themes` connects modules to themes.
+### Prerequisites
+- Node.js 18+
+- PostgreSQL 14+
+- Git
 
-### Core relationships
-
-- `assignment` belongs to `module`
-- `submission` belongs to `assignment` and `student`
-- `submission_ratings` capture rubric criterion ratings per submission
-- `student_outcome_snapshots` capture aggregated mastery per student/outcome over time
-
-### Snapshot data
-
-- Each snapshot is a historical record used to compute trends.
-- A snapshot typically includes: student id, outcome id, mastery score, timestamp, and confidence metadata.
-- The system relies on snapshots for both dashboards and trend analysis.
-
-## 5. Setup & development environment
-
-This repo is for documentation. The application code is in `ILS-dev`.
-
-### ILS-doc local docs server
-
-```powershell
-cd C:\Users\0102663\Projects\bim\ILS-doc
-pip install mkdocs-material
-mkdocs serve
-```
-
-### ILS-dev app setup
-
-The application code lives in `C:\Users\0102663\Projects\bim\ILS-dev`.
-
-```powershell
-cd C:\Users\0102663\Projects\bim\ILS-dev\backend
-copy .env.example .env
+### Backend Setup
+```bash
+cd ILS-dev/backend
+cp .env.example .env
+# Edit .env with your database credentials
 npm install
 npm run create-db
-npm run dev
-
-cd ..\frontend
+npm run migrate
+npm run dev  # Runs on port 4000
+Frontend Setup
+bash
+cd ILS-dev/frontend
 npm install
-npm run dev
-```
+npm run dev  # Runs on port 5173
+Documentation Server
+bash
+cd ILS-doc
+pip install mkdocs-material
+mkdocs serve  # Runs on port 8000
+7. Database Migrations
+All schema changes must be SQL migrations in backend/migrations/
 
-### Testing
+Migrations must be idempotent (can run multiple times safely)
 
-- Backend tests: `cd backend && npm run test:reporting`
-- Frontend tests: `cd frontend && npm run test:playwright`
+sequelize.sync() is disabled in all environments
 
-## 6. Key workflows
+Soft deletes use deleted_at timestamp
 
-### Grading → snapshots → trends
+8. Testing
+bash
+# Backend tests
+cd ILS-dev/backend
+npm run test:reporting
 
-1. A teacher grades a submission using rubrics.
-2. Criterion-level ratings are saved in `submission_ratings`.
-3. The backend aggregates these ratings into per-assignment outcome scores.
-4. `student_outcome_snapshots` are created or updated for each student/outcome.
-5. Trend computation compares the latest snapshots to previous snapshots and produces:
-   - `trend_direction`
-   - `trend_confidence`
-   - `delta`
+# Frontend tests  
+cd ILS-dev/frontend
+npm run test:playwright
+9. Known Limitations
+BigInt values are serialized as strings in API responses (JSON limitation)
 
-### Developer tasks for Phase A
+No cross-ownership in vertical hierarchy (entities belong to exactly one parent)
 
-- Update documentation content in this repo, not application code.
-- Use the current branch `docs/phase-a-structure` for Phase A work.
-- Keep Phase A focused on developer-facing architecture, setup, and workflows.
+Horizontal entities (outcomes, themes) are global, not owned by modules/courses
 
-## 7. Known issues & future todos
+No new tables without approval (stabilization phase)
 
-- `pwsh` may not be available in some Windows environments; git hooks should fall back to `powershell` as needed.
-- Documentation in this repo should not mix user guides with developer guidance.
-- Future additions:
-  - API reference examples
-  - ER diagrams and relationship visualizations
-  - Troubleshooting and environment setup notes
+10. Troubleshooting
+Database connection errors
+Verify PostgreSQL is running
 
-## 8. Quick links
+Check .env DATABASE_URL
 
-- ILS app backend: `C:\Users\0102663\Projects\bim\ILS-dev\backend`
-- ILS app frontend: `C:\Users\0102663\Projects\bim\ILS-dev\frontend`
-- Docs repo: `C:\Users\0102663\Projects\bim\ILS-doc`
-- Current docs branch: `docs/phase-a-structure`
-- Project board: https://github.com/users/Maestrocop/projects/5
+Run npm run create-db to ensure database exists
+
+Migration failures
+Check migration order (by timestamp)
+
+Verify no duplicate migration names
+
+Check for destructive operations without rollback
+
+API returns BigInt as string
+This is expected behavior
+
+Frontend handles conversion automatically
+
+Related Documentation
+Teacher Guide - UI workflows for teachers
+
+Student Guide - Student assignment submission
+
+Admin Guide - System administration
+
+API Reference - Complete API documentation
+
+text
 
 ---
 
-This page is the Phase A developer reference for ILS documentation. Review before expanding into separate MkDocs pages.
+## File 3: `C:\Users\0102663\Projects\bim\ILS-dev\.github\agents\speckit.docs.agent.md`
+
+**Purpose:** Minimal agent instruction (just the role, no analysis)
+
+```markdown
+# Documentation Agent
+
+## Role
+Documentation scribe for ILS project.
+
+## Responsibility
+Read `ILS-dev` codebase and write/update documentation in `ILS-doc`.
+
+## Rules
+
+### Allowed Actions
+- Read any file in `ILS-dev` (routes, models, components, pages)
+- Create or edit Markdown files in `ILS-doc/docs/`
+- Run `mkdocs build --strict` to validate documentation
+
+### Forbidden Actions
+- Suggesting code changes to `ILS-dev`
+- Analyzing architecture or proposing improvements
+- Creating "missing features" documentation
+- Giving development advice
+- Acting as a product manager or architect
+
+## Behavior Pattern
+
+For each documentation request:
+
+1. **State intent:** "I will document [specific file/section] from ILS-dev"
+2. **Read source:** Examine the actual code in ILS-dev
+3. **Write documentation:** Update the corresponding file in ILS-doc
+4. **Validate:** Run `mkdocs build --strict` if applicable
+5. **Stop:** No additional comments, suggestions, or analysis
+
+## Reset Mechanism
+
+If the agent begins giving advice or analysis instead of documenting, the user will say:
+
+**"DOCUMENT ONLY"**
+
+Upon hearing this phrase, the agent must immediately:
+- Stop any analysis or suggestions
+- Respond with: "Documenting. What should I work on?"
+- Resume documentation-only behavior
+
+## Context Files
+
+Documentation tasks are tracked in:
+- `ILS-doc/Active-ILS-doc.md` - Task checklist
+- GitHub Projects board: `https://github.com/users/Maestrocop/projects/5`
+
+## Examples
+
+### Correct behavior
+User: "Document the grading workflow"
+Agent: "I will document the grading workflow from ILS-dev/backend/routes/grading.js"
+[Reads file, updates ILS-doc/docs/teacher/grading.md]
+Agent: "Done. docs/teacher/grading.md updated."
+
+### Incorrect behavior (should never happen)
+User: "Document the grading workflow"  
+Agent: "You should also consider adding a notification system for..." ← WRONG
+
+## Remember
+Document what EXISTS. Nothing else.

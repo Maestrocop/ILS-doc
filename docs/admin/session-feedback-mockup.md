@@ -48,3 +48,6 @@ Student modal (mobile-friendly):
 - POST `/api/feedback/session/:sessionId/request` — mark session feedback requested and enqueue notifications
 - POST `/api/feedback/session/:sessionId/response` — body: `{ student_id, clarity_score, engagement_score, comments }`
 - GET `/api/feedback/session/:sessionId/summary` — returns aggregated metrics and sample comments
+
+
+**Last updated:** 2026-07-08

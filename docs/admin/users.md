@@ -33,3 +33,6 @@ Go to **Users** in the admin menu to:
 **Teacher** — delivers classes, grades assignments, views student progress
 
 **Student** — accesses curriculum, assignments, and progress views
+
+
+**Last updated:** 2026-07-08

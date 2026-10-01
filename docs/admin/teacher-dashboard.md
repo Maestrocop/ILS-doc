@@ -16,3 +16,6 @@ Go to **Teacher Dashboard** in the admin menu to:
 1. Open Teacher Dashboard
 2. Review teacher summaries and engagement indicators
 3. Use insights to inform staffing and coaching decisions
+
+
+**Last updated:** 2026-07-08

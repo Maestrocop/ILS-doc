@@ -87,3 +87,6 @@ Security: ensure only enrolled students can submit for the session.
 ---
 
 If you'd like, I will add example JSON payloads for the APIs and a sample migration SQL template in the docs. I will not modify `ILS-dev`.
+
+
+**Last updated:** 2026-07-08

@@ -34,3 +34,6 @@ An SLB (mentor, counselor, or career advisor) is a staff member assigned respons
 ## Escalation
 
 If you encounter wellbeing or safeguarding issues, follow school policy and escalate to a coordinator or counselor immediately. Use the platform to flag the student and record the escalation.
+
+
+**Last updated:** 2026-07-08

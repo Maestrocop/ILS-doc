@@ -73,3 +73,6 @@ If you want, I can add the exact endpoint examples (curl + request body) to help
 ---
 
 If you'd like, I can also add a small admin-facing checklist UI mockup and a suggested migration script template to help with bulk remapping. I will not modify `ILS-dev` — only update docs in `ILS-doc`.
+
+
+**Last updated:** 2026-07-08

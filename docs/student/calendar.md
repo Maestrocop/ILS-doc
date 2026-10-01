@@ -1,5 +1,41 @@
 # Student Calendar
 
+This guide explains how students use the calendar to track sessions, deadlines, and rescheduled or makeup classes.
+
+## Viewing the Calendar
+
+1. Open **Calendar** from the main navigation.
+2. Choose between `Month`, `Week`, or `Day` view.
+3. Use the filters to show only your enrolled classes or all module sessions.
+
+## Session Details
+
+- Click a session to view location, facilitator, linked learning outcomes, and attached resources.
+- If a session was cancelled or moved, the session card shows status and a link to the makeup session if scheduled.
+
+## Deadlines & Assignment Due Dates
+
+- Assignment due dates appear in the calendar with a paper icon.
+- Click the due date to open the assignment and submit work.
+
+## Syncing with External Calendars
+
+- If your school enables calendar sync, you can subscribe using an iCal feed or via calendar integrations in `Settings → Calendar`.
+- To resync: open `Settings → Calendar` and click **Resync**. If external calendars lag, ask your IT or check integration status.
+
+## Notifications
+
+- Calendar notifications are controlled in `Settings → Notifications`.
+- Enable reminders for upcoming sessions and assignment due dates.
+
+## Troubleshooting
+
+- "I don't see a session": check module visibility and publication date; unpublished sessions don't appear.
+- "My calendar didn't sync": verify your iCal URL and resync from settings.
+
+**Last updated:** 2026-07-06
+# Student Calendar
+
 Your calendar shows all your deadlines, class sessions, and important dates in one timeline.
 
 ## What you see on your calendar

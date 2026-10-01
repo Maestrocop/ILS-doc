@@ -24,3 +24,6 @@ Go to **Course Builder** in the admin menu to:
 - Verify student navigation before publishing
 - See exactly what students will see
 - Bridge between admin configuration and student experience
+
+
+**Last updated:** 2026-07-08

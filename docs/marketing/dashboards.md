@@ -26,3 +26,6 @@ Teachers move from reactive to proactive: identify risks early, reduce grading b
 ## Why this matters to schools
 
 Role-tailored dashboards help each user focus on what matters most, reducing information overload and enabling faster, more informed decisions.
+
+
+**Last updated:** 2026-07-08

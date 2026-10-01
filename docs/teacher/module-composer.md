@@ -1,3 +1,36 @@
+# Module Composer
+
+This guide explains how teachers create and structure a Module (the central hub for lessons, resources, and assignments).
+
+## Purpose
+
+The Module Composer lets you define the sequence and resources for a module, attach learning outcomes, and add assignments.
+
+## Steps
+
+1. Open **Modules** from the Teacher menu.
+2. Click **Create Module** to start a new module or click an existing module to edit.
+3. Fill the module header: title, code, start/end dates, and visibility.
+4. Use the **Weeks & Topics** area to add sections. Each section can contain:
+   - Lessons (sessions)
+   - Resources (files, links)
+   - Activities (quizzes, assignments)
+5. Add assignments via **Add assignment** — link them to this module so reporting and progress maps work.
+6. Link outcomes and themes using the **Outcomes** panel; choose mastery thresholds where applicable.
+7. Save the module. Use **Publish** to make it visible to students depending on your release policy.
+
+## Best practices
+
+- Keep modules focused (3–6 weeks) for better progress tracking.
+- Use outcome links liberally — they power heatmaps and reporting.
+- Attach rubrics to assignments at creation time for smoother grading.
+
+## Troubleshooting
+
+- "I can't add an assignment": confirm you have permission and the module has a valid `start_date`.
+- "Outcomes not visible": outcomes are global; search by code or use filters.
+
+**Last updated:** 2026-07-04
 # Module Composer — Sequencing & Locks
 
 The Module Composer lets you build ordered learning sequences in a module and set rules for when students can access each item.

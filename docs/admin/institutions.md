@@ -35,3 +35,6 @@ When you create or edit an institution, you'll fill in:
 
 - Institution management is restricted to admin users in the UI.
 - The institution entity is the root of the curriculum hierarchy and is referenced by campuses.
+
+
+**Last updated:** 2026-07-08

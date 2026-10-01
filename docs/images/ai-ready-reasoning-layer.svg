@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="140" viewBox="0 0 960 140" role="img">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#233d8a" />
+    </marker>
+  </defs>
+  <rect width="960" height="140" fill="#ffffff" />
+  <rect x="40" y="40" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="130.0" y="69.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="130.0" dy="0">Raw Data</tspan>
+</text>
+  <rect x="260" y="40" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="350.0" y="69.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="350.0" dy="0">Structured Signals</tspan>
+</text>
+  <rect x="480" y="40" width="220" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="590.0" y="62.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="590.0" dy="0">Human Reasoning</tspan>
+  <tspan x="590.0" dy="14.399999999999999">(Panel)</tspan>
+</text>
+  <rect x="740" y="40" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="830.0" y="69.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="830.0" dy="0">AI-ready Layer</tspan>
+</text>
+  <line x1="130.0" y1="90" x2="350.0" y2="40" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="350.0" y1="90" x2="590.0" y2="40" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="590.0" y1="90" x2="830.0" y2="40" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+</svg>

@@ -22,3 +22,8 @@ At-risk detection identifies students whose outcome mastery is below a configure
 
 - A student can be at risk on one outcome but not others.
 - Teachers should review both current mastery and trend confidence before deciding on next steps.
+- At-risk detection should trigger a review, not an automatic intervention.
+- Cross-check at-risk students with heatmap and snapshot trends before planning support.
+
+
+**Last updated:** 2026-07-08

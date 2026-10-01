@@ -1,0 +1,27 @@
+flowchart TD
+  A[Learning Evidence<br/>Assignments / Quizzes / Projects / Internship] --> B[Outcome Engine]
+  B --> C[Outcome Category Layer]
+  C --> C1[Applied Skills]
+  C --> C2[Knowledge]
+  C --> C3[Professional Practice]
+  C --> C4[Critical Competency]
+  C --> C5[Creative / Portfolio]
+  C1 --> D1[decaying_average]
+  C2 --> D2[average]
+  C3 --> D3[weighted_average]
+  C4 --> D4[n_number_of_times]
+  C5 --> D5[highest_score]
+  D1 --> E[Mastery Score per Outcome]
+  D2 --> E
+  D3 --> E
+  D4 --> E
+  D5 --> E
+  E --> F[Threshold Evaluation]
+  F --> G[Student Intelligence Layer]
+  G --> H[Student Cockpit]
+  G --> I[Heatmap View]
+  G --> J[Student Intelligence Panel]
+  H --> K[Teacher Actions]
+  I --> K
+  J --> K
+  K --> L[Intervention / Support / Grading / Progress Tracking]

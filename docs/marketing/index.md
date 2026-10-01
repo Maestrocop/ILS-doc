@@ -25,3 +25,6 @@ Use these pages as source material for:
 - sales narratives
 - differentiator positioning
 - executive summaries and pitch decks
+
+
+**Last updated:** 2026-07-08

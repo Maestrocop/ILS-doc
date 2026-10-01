@@ -149,3 +149,6 @@ See what your school has been missing.
 Schools choose ILS because it's the only system that turns learning into something measurable, explainable, and improvable.
 
 And once you can see what's actually happening, improvement isn't optional. It's obvious.
+
+
+**Last updated:** 2026-07-08

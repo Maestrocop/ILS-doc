@@ -150,3 +150,6 @@ Some administrative operations are also available under `/api/admin/*` for migra
 
 This guide is not a complete operations manual.
 It is focused on the current admin features that exist in `ILS-dev` and the production data model.
+
+
+**Last updated:** 2026-07-08

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Outcomes Import Row",
+  "type": "object",
+  "properties": {
+    "code": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "framework": { "type": "string" },
+    "level": { "type": "string" }
+  },
+  "required": ["code", "title"],
+  "additionalProperties": false
+}

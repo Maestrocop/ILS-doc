@@ -16,3 +16,6 @@ Go to **Themes** in the admin menu to:
 - Themes group modules and learning outcomes
 - They appear in reporting and curriculum maps
 - Teachers use them to see cross-module connections
+
+
+**Last updated:** 2026-07-08

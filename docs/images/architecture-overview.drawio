@@ -1,0 +1,75 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Architecture Overview" id="ARCH-OVERVIEW-2026">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="teacher" parent="1" value="TEACHER / USER" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1d4ed8;fontSize=16;fontStyle=1;">
+          <mxGeometry x="400" y="40" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cockpit" parent="1" value="STUDENT COCKPIT\n(Daily action + risk + overview)" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#f59e0b;fontSize=14;">
+          <mxGeometry x="320" y="140" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" edge="1" parent="1" source="teacher" target="cockpit" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#1d4ed8;html=1;" />
+        <mxCell id="risk" parent="1" value="Risk Engine\nIndicators" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontSize=14;">
+          <mxGeometry x="80" y="260" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="overdue" parent="1" value="Overdue\nSystem" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontSize=14;">
+          <mxGeometry x="280" y="260" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="recency" parent="1" value="Recency\nSystem" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontSize=14;">
+          <mxGeometry x="480" y="260" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="assignment" parent="1" value="Assignment\nTracking" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontSize=14;">
+          <mxGeometry x="680" y="260" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="cockpit" target="risk" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#f59e0b;html=1;" />
+        <mxCell id="a2" edge="1" parent="1" source="cockpit" target="overdue" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#f59e0b;html=1;" />
+        <mxCell id="a3" edge="1" parent="1" source="cockpit" target="recency" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#f59e0b;html=1;" />
+        <mxCell id="a4" edge="1" parent="1" source="cockpit" target="assignment" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#f59e0b;html=1;" />
+        <mxCell id="panel" parent="1" value="STUDENT INTELLIGENCE PANEL\n(WHY is student at risk? Drill-down)" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontSize=14;">
+          <mxGeometry x="320" y="380" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" edge="1" parent="1" source="risk" target="panel" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#0284c7;html=1;" />
+        <mxCell id="b2" edge="1" parent="1" source="overdue" target="panel" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#0284c7;html=1;" />
+        <mxCell id="b3" edge="1" parent="1" source="recency" target="panel" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#0284c7;html=1;" />
+        <mxCell id="b4" edge="1" parent="1" source="assignment" target="panel" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#0284c7;html=1;" />
+        <mxCell id="heatmap" parent="1" value="HEATMAP VIEW\n(Outcome-level mastery visualization)" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontSize=14;">
+          <mxGeometry x="320" y="500" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" edge="1" parent="1" source="panel" target="heatmap" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#7c3aed;html=1;" />
+        <mxCell id="dataLayer" parent="1" value="RAW DATA LAYER" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f4f6;strokeColor=#475569;fontSize=16;">
+          <mxGeometry x="100" y="640" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="intelligenceEngine" parent="1" value="INTELLIGENCE ENGINE\n(core scoring + logic layer)" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontSize=14;">
+          <mxGeometry x="420" y="640" width="340" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" edge="1" parent="1" source="dataLayer" target="intelligenceEngine" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#475569;html=1;" />
+        <mxCell id="outcomeCalc" parent="1" value="Outcome Calc\n(decay / avg / weighted)" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f4f6;strokeColor=#475569;fontSize=14;">
+          <mxGeometry x="80" y="770" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="riskEngine" parent="1" value="Risk Engine\n(multi-factor)" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f4f6;strokeColor=#475569;fontSize=14;">
+          <mxGeometry x="380" y="770" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="recencyEngine" parent="1" value="Recency Engine\n(graded freshness)" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f4f6;strokeColor=#475569;fontSize=14;">
+          <mxGeometry x="680" y="770" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" edge="1" parent="1" source="intelligenceEngine" target="outcomeCalc" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#475569;html=1;" />
+        <mxCell id="d3" edge="1" parent="1" source="intelligenceEngine" target="riskEngine" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#475569;html=1;" />
+        <mxCell id="d4" edge="1" parent="1" source="intelligenceEngine" target="recencyEngine" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#475569;html=1;" />
+        <mxCell id="students" parent="1" value="Students\nAttendance\nEngagement" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0f172a;fontSize=12;">
+          <mxGeometry x="20" y="860" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="assignments" parent="1" value="Assignments\nModules\nRubrics" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0f172a;fontSize=12;">
+          <mxGeometry x="280" y="860" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="submissions" parent="1" value="Submissions\nGrading Data\nOutcomes" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0f172a;fontSize=12;">
+          <mxGeometry x="540" y="860" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="d5" edge="1" parent="1" source="students" target="intelligenceEngine" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#475569;html=1;" />
+        <mxCell id="d6" edge="1" parent="1" source="assignments" target="intelligenceEngine" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#475569;html=1;" />
+        <mxCell id="d7" edge="1" parent="1" source="submissions" target="intelligenceEngine" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#475569;html=1;" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

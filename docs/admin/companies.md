@@ -10,3 +10,6 @@ Go to **Companies** in the admin menu to:
 - Manage partnership status
 - Track visit logs and student placement history
 - Look up companies for internship assignments and monitoring
+
+
+**Last updated:** 2026-07-08

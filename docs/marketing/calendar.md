@@ -13,3 +13,6 @@ The ILS calendar aggregates all schedule data for students, teachers, and admini
 ## Why it matters
 
 A single source of schedule truth for students and staff reduces missed deadlines, eliminates duplicated scheduling efforts, and improves time management across the school.
+
+
+**Last updated:** 2026-07-08

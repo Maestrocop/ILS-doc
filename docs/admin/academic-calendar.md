@@ -42,3 +42,6 @@ When you create an academic event, you'll set:
 ## Related
 
 - [Timetable Engine — Test Checklist](timetable-engine-test-checklist.md)
+
+
+**Last updated:** 2026-07-08

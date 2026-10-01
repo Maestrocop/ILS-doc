@@ -79,3 +79,6 @@ This domain should be logically separate from curriculum and timetable but integ
 ---
 
 If you like, I'll add a short sample UI mockup and a one-page PDCA poster to include in onboarding docs. I will not change `ILS-dev` — only add documentation under `ILS-doc`.
+
+
+**Last updated:** 2026-07-08

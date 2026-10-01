@@ -57,3 +57,6 @@ Click 🔓 to lock, click 🔒 to unlock, and change the dropdown when locked to
 ### Hover help for teachers
 
 Browser `<option>` elements are inconsistent for hover tooltips across platforms. The Module Composer shows a short explanation by placing a dynamic `title` on the `<select>` itself (the tooltip reflects the currently selected option and updates when the teacher changes it). Hover the dropdown to see the brief explanation for the selected prerequisite.
+
+
+**Last updated:** 2026-07-08

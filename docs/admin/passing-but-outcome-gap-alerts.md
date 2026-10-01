@@ -16,3 +16,6 @@ This admin note describes the proposed alert type: "Passing but outcome gap".
 - Configureable thresholds: passing grade and outcome diagnostic threshold.
 - Reporting: include the alert in class-level reports and the Progression Review side-panel.
 
+
+
+**Last updated:** 2026-07-08

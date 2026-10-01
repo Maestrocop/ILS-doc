@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="860" viewBox="0 0 940 860" role="img">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#233d8a" />
+    </marker>
+  </defs>
+  <rect width="940" height="860" fill="#ffffff" />
+  <rect x="40" y="40" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="130.0" y="69.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="130.0" dy="0">Learning Evidence</tspan>
+</text>
+  <rect x="240" y="40" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="330.0" y="69.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="330.0" dy="0">Outcome Engine</tspan>
+</text>
+  <rect x="440" y="40" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="530.0" y="69.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="530.0" dy="0">Outcome Category System</tspan>
+</text>
+  <rect x="40" y="130" width="160" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="120.0" y="159.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="120.0" dy="0">Applied Skills</tspan>
+</text>
+  <rect x="220" y="130" width="160" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="300.0" y="159.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="300.0" dy="0">Knowledge</tspan>
+</text>
+  <rect x="400" y="130" width="160" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="480.0" y="159.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="480.0" dy="0">Professional Practice</tspan>
+</text>
+  <rect x="40" y="200" width="160" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="120.0" y="229.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="120.0" dy="0">Critical Competency</tspan>
+</text>
+  <rect x="220" y="200" width="160" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="300.0" y="229.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="300.0" dy="0">Creative / Portfolio</tspan>
+</text>
+  <rect x="440" y="190" width="240" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="560.0" y="219.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="560.0" dy="0">Calculation Methods</tspan>
+</text>
+  <rect x="440" y="260" width="240" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="560.0" y="289.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="560.0" dy="0">Mastery Scores per Outcome</tspan>
+</text>
+  <rect x="440" y="330" width="240" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="560.0" y="359.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="560.0" dy="0">Threshold &amp; Risk Evaluation</tspan>
+</text>
+  <rect x="440" y="400" width="240" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="560.0" y="429.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="560.0" dy="0">Student Risk Signals</tspan>
+</text>
+  <rect x="40" y="500" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="130.0" y="529.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="130.0" dy="0">Student Cockpit</tspan>
+</text>
+  <rect x="260" y="500" width="240" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="380.0" y="529.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="380.0" dy="0">Student Intelligence Panel</tspan>
+</text>
+  <rect x="40" y="580" width="140" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="110.0" y="609.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="110.0" dy="0">Outcome Breakdown</tspan>
+</text>
+  <rect x="200" y="580" width="140" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="270.0" y="609.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="270.0" dy="0">Trends per Outcome</tspan>
+</text>
+  <rect x="360" y="580" width="140" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="430.0" y="609.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="430.0" dy="0">Overdue / Pending Context</tspan>
+</text>
+  <rect x="520" y="580" width="140" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="590.0" y="609.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="590.0" dy="0">Recency of Assessment</tspan>
+</text>
+  <rect x="680" y="580" width="140" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="750.0" y="609.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="750.0" dy="0">Weakest Skills Analysis</tspan>
+</text>
+  <rect x="260" y="660" width="240" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="380.0" y="689.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="380.0" dy="0">Teacher Decision Layer</tspan>
+</text>
+  <rect x="40" y="740" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="130.0" y="769.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="130.0" dy="0">Intervention / Support / Feedback</tspan>
+</text>
+  <rect x="260" y="740" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="350.0" y="769.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="350.0" dy="0">Grading Actions</tspan>
+</text>
+  <rect x="520" y="740" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="610.0" y="769.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="610.0" dy="0">Monitoring</tspan>
+</text>
+  <line x1="130.0" y1="90" x2="330.0" y2="40" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="330.0" y1="90" x2="530.0" y2="40" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="530.0" y1="90" x2="120.0" y2="130" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="530.0" y1="90" x2="300.0" y2="130" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="530.0" y1="90" x2="480.0" y2="130" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="530.0" y1="90" x2="120.0" y2="200" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="530.0" y1="90" x2="300.0" y2="200" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="120.0" y1="180" x2="560.0" y2="190" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="300.0" y1="180" x2="560.0" y2="190" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="480.0" y1="180" x2="560.0" y2="190" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="120.0" y1="250" x2="560.0" y2="190" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="300.0" y1="250" x2="560.0" y2="190" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="560.0" y1="240" x2="560.0" y2="260" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="560.0" y1="310" x2="560.0" y2="330" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="560.0" y1="380" x2="560.0" y2="400" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="560.0" y1="450" x2="380.0" y2="500" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="130.0" y1="550" x2="380.0" y2="660" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="380.0" y1="550" x2="380.0" y2="660" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="380.0" y1="710" x2="130.0" y2="740" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="380.0" y1="710" x2="350.0" y2="740" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="380.0" y1="710" x2="610.0" y2="740" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+</svg>

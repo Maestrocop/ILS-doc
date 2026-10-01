@@ -344,3 +344,6 @@ ILS is not another LMS, gradebook, or admin system.
 It is a learning improvement engine for education institutions.
 
 **[Request a demo](#final-cta)** | **[Talk to us](#final-cta)**
+
+
+**Last updated:** 2026-07-08

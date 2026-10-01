@@ -23,3 +23,6 @@ Go to **Categories** in the admin menu to:
 2. Add categories needed by your curriculum framework
 3. Update labels or descriptions as needed
 4. Remove obsolete categories
+
+
+**Last updated:** 2026-07-08

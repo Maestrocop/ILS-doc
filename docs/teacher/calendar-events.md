@@ -52,3 +52,5 @@ The event will appear on the calendar and be visible to your students.
 - Use custom events to block time for reviews, retakes, or special sessions
 - If your institution has holidays set in the Academic Calendar, they'll appear automatically
 - You can filter the calendar view by class to focus on a specific group
+
+**Last updated:** 2026-07-08

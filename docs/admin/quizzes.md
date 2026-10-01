@@ -45,3 +45,6 @@ For site-wide extra retries, the teacher should increase `Attempts allowed` on t
 - Pure MCQ quizzes use the quiz score as outcome evidence (no rubric needed)
 - Rubrics are only required for essay or short-answer questions
 - Mixed quizzes can combine auto-graded scores and rubric-scored open questions
+
+
+**Last updated:** 2026-07-08

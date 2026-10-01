@@ -48,3 +48,6 @@ This page explains how outcome mastery, trends, and confidence work in ILS.
 - Review teacher feedback for that outcome.
 - Set a specific goal for the next assignment.
 - Check your progress again after the next snapshot.
+
+
+**Last updated:** 2026-07-08

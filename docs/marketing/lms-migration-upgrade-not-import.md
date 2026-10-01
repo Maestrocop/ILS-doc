@@ -27,3 +27,6 @@
 ## Positioning line
 
 "Move legacy LMS content into ILS with a migration that preserves structure, imports content, and elevates intelligence."
+
+
+**Last updated:** 2026-07-08

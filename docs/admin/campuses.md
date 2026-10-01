@@ -42,3 +42,6 @@ These thresholds affect:
 2. Assign campuses to institutions.
 3. Use the reporting rules editor to configure campus thresholds.
 4. Keep campus metadata current to ensure class reports use the correct context.
+
+
+**Last updated:** 2026-07-08

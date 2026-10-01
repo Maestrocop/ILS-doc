@@ -49,3 +49,6 @@ If you want to set up course-specific teaching blocks quickly:
 - Use the Standard Template when teachers need weekly session precision
 - Institution-level periods (years, semesters) are managed by Admin only
 - Course-specific periods are created by Designers in the Curriculum Composer or via templates
+
+
+**Last updated:** 2026-07-08

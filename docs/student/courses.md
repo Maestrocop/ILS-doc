@@ -27,3 +27,6 @@ The page typically supports:
 
 The Courses page is the starting point for student navigation in ILS.
 It helps students stay organized around their active learning pathways.
+
+
+**Last updated:** 2026-07-08

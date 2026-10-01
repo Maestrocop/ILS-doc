@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#233d8a" />
+    </marker>
+  </defs>
+  <rect width="960" height="320" fill="#ffffff" />
+  <rect x="40" y="40" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="130.0" y="69.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="130.0" dy="0">Learning Evidence</tspan>
+</text>
+  <rect x="260" y="40" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="350.0" y="69.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="350.0" dy="0">Outcome Engine</tspan>
+</text>
+  <rect x="480" y="40" width="200" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="580.0" y="62.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="580.0" dy="0">Outcome Categories</tspan>
+  <tspan x="580.0" dy="14.399999999999999">(logic layer)</tspan>
+</text>
+  <rect x="720" y="40" width="200" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="820.0" y="62.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="820.0" dy="0">Calculation Method</tspan>
+  <tspan x="820.0" dy="14.399999999999999">(rule engine)</tspan>
+</text>
+  <rect x="260" y="140" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="350.0" y="169.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="350.0" dy="0">Mastery Score</tspan>
+</text>
+  <rect x="480" y="140" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="570.0" y="162.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="570.0" dy="0">Decision Layer</tspan>
+  <tspan x="570.0" dy="14.399999999999999">(thresholds)</tspan>
+</text>
+  <rect x="260" y="240" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="350.0" y="269.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="350.0" dy="0">Student Intelligence System</tspan>
+</text>
+  <rect x="480" y="240" width="180" height="50" rx="8" ry="8" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+<text x="570.0" y="269.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0d1b41">
+  <tspan x="570.0" dy="0">Teacher Actions</tspan>
+</text>
+  <line x1="130.0" y1="90" x2="350.0" y2="40" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="350.0" y1="90" x2="580.0" y2="40" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="580.0" y1="90" x2="820.0" y2="40" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="350.0" y1="90" x2="350.0" y2="140" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="820.0" y1="90" x2="570.0" y2="140" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="350.0" y1="190" x2="350.0" y2="240" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="570.0" y1="190" x2="570.0" y2="240" stroke="#233d8a" stroke-width="2" marker-end="url(#arrowhead)" />
+</svg>

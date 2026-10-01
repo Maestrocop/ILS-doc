@@ -38,3 +38,6 @@ Each student row typically includes:
 
 Teacher Roster is a triage workspace.
 It lets teachers quickly find the students who are most stale or at risk and then move straight into the Student Cockpit for action.
+
+
+**Last updated:** 2026-07-08

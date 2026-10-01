@@ -22,3 +22,6 @@ Go to **Criteria Bank** in the admin menu to:
 - Review surface for auditing rubric coverage (not an editor)
 - Useful during rubric design and curriculum alignment checks
 - Helps maintain consistency across rubrics
+
+
+**Last updated:** 2026-07-08

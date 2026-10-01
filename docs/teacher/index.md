@@ -36,3 +36,6 @@ The teacher guide is designed for classroom leaders who need to:
 - understand how mastery and trends are calculated
 - make intervention decisions based on evidence
 - communicate progress clearly to students and parents
+
+
+**Last updated:** 2026-07-08

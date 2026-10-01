@@ -56,3 +56,6 @@ The system will:
 
 - CSV bulk-enroll now supports creating new student records during import and shows clearer per-row warnings for students already enrolled in overlapping classes. If a student appears in two classes for the same module, the UI warns before finalizing the import.
 - A single-click cohort enroll option was added to enable quick enrollment of entire cohorts into a class.
+
+
+**Last updated:** 2026-07-08

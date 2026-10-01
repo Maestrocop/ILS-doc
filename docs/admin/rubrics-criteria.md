@@ -33,3 +33,6 @@ When you create or edit a rubric, you'll:
 3. Define rating levels for each criterion (e.g., Excellent, Good, Needs Work)
 4. Attach criteria to learning outcomes
 5. Set pass thresholds and weights
+
+
+**Last updated:** 2026-07-08

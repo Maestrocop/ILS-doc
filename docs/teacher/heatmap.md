@@ -99,3 +99,6 @@ Use it together with Student Cockpit and Classroom Intelligence for the clearest
 - Reporting thresholds are now configurable per campus; you may see slightly different success/re-teach guidance when viewing classes on different campuses.
 - The Heatmap UI now highlights weak outcome clusters more clearly and links directly to Classroom Intelligence for narrative guidance when sufficient graded evidence exists.
 - If a cell shows a pending indicator, click to open grading and refresh the view after saving to update the class picture.
+
+
+**Last updated:** 2026-07-08

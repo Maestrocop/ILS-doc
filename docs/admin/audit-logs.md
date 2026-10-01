@@ -22,3 +22,6 @@ Go to **Audit Logs** in the admin menu to:
 - Confirm configuration changes
 - Track user actions
 - Investigate unexpected changes
+
+
+**Last updated:** 2026-07-08

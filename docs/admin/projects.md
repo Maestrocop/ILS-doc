@@ -23,3 +23,6 @@ Go to **Projects** in the admin menu to:
 - Projects support longer-form learning activities
 - Projects can include tasks, submissions, and artifacts
 - Projects complement assignment and quiz workflows
+
+
+**Last updated:** 2026-07-08

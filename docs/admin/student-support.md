@@ -28,3 +28,6 @@ You can assign advisors to students and manage their support relationships. Each
 - See advisor badges in class listings to track who is assigned
 
 
+
+
+**Last updated:** 2026-07-08

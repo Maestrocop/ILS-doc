@@ -1,0 +1,7 @@
+student_id,student_email,assignment_code,criterion_code,score
+1001,alice@example.com,ASSIGN-001,CRIT-1,3
+1001,alice@example.com,ASSIGN-001,CRIT-2,4
+1002,bob@example.com,ASSIGN-001,CRIT-1,2
+code,title,description,framework,level
+OUT001,Define variables,Students can define variables,Core,Introductory
+OUT002,Use arithmetic,Students can perform arithmetic operations,Core,Introductory

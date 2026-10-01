@@ -1,0 +1,7 @@
+student_number,first_name,last_name
+S001,Jan,Andersen
+S002,Jomal,Benali
+S002,Fakir,van de graaf
+S003,Peter,Jan loop
+S004,Mo,Saidi
+S005,Susane,van de graaf

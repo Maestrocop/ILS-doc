@@ -61,3 +61,6 @@ Example:
 In this case, first verify grading completeness, then re-teach the weakest outcomes and reassess before resuming normal pacing.
 
 See also: [Re-teach Decision Playbook](reteach-decision-playbook.md) for the complete decision and action flow.
+
+
+**Last updated:** 2026-07-08

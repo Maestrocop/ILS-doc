@@ -23,3 +23,6 @@ Go to **Mapping Matrix** in the admin menu to:
 - Most valuable after outcomes, rubrics, and assignments have been created
 - Essential planning and validation tool for curriculum designers
 - Use during curriculum alignment reviews
+
+
+**Last updated:** 2026-07-08

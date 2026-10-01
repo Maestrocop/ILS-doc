@@ -108,3 +108,6 @@ Click any student row to open the **Student Intelligence Panel**. It shows:
 - Risk narrative added to student panel for clearer context
 - Grading counts and trend reasons shown in panel
 - Visual labels tuned for clarity (e.g., "Watch" now uses softer blue)
+
+
+**Last updated:** 2026-07-08

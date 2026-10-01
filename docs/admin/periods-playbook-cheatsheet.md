@@ -90,3 +90,6 @@ If any arrow points to an undated period, sessions will not generate.
 ---
 
 If you want, I'll also add a small migration script template (docs-only) to bulk remap orphan `course_structure` rows. I will not change any code in `ILS-dev`.
+
+
+**Last updated:** 2026-07-08

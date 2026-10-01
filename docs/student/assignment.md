@@ -26,3 +26,6 @@ The page typically supports:
 
 - This page is a direct learner view of a single assignment.
 - It is often accessed from the curriculum or submissions pages.
+
+
+**Last updated:** 2026-07-08

@@ -42,3 +42,6 @@ Outcome mastery scores are typically on a 0–10 scale:
 - Mastery scores allow the system to compare students fairly across different assignments
 - They provide the basis for snapshots, trends, heatmaps, and at-risk detection
 - Teachers use mastery as a normalized indicator of whether a student is meeting the intended outcome
+
+
+**Last updated:** 2026-07-08

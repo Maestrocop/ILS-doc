@@ -86,3 +86,6 @@ The daily internship log should stay lightweight:
 - optional tags for activities, skills, and technologies
 
 That keeps usage high while making the data commercially useful.
+
+
+**Last updated:** 2026-07-08

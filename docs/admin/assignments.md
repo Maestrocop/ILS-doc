@@ -22,3 +22,6 @@ When you create or edit an assignment, you'll set:
 - **Scoring mode** — rubric-based, points-based, or pass/fail
 - **Linked rubric** — the grading tool teachers will use
 - **Linked outcomes** — which learning outcomes this assignment assesses
+
+
+**Last updated:** 2026-07-08

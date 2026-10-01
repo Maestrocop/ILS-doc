@@ -44,3 +44,6 @@ In some cases, teachers or schools may use a different calculation method for a 
 - Use the standard category-method mapping when possible
 - Only apply custom calculations when the learning context clearly requires it
 - Ensure any custom rule is clearly documented
+
+
+**Last updated:** 2026-07-08

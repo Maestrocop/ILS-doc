@@ -47,13 +47,15 @@ In advanced mode, teachers may be able to save drafts before finalizing.
 - Use **Save Draft** when grading is still in progress.
 - Use **Finalize** when the score is complete and ready to be recorded.
 
-In simple mode, saving the grade usually writes the final score immediately.
+In simple mode, there is one **Save Grade** button, and it writes the final score immediately (submission becomes `graded`) — the student is notified right away that their work has been graded.
 
 ### Return and reset workflows
 The grading cockpit also supports returning a graded submission to the student for revision, and resetting a finalized grade.
 
-- **Return for revision** — send a graded submission back to the student with feedback
+- **Return for revision** — sends the submission back to the student (status becomes `returned`, score cleared to pending) with your feedback, and notifies the student to review and resubmit
 - **Reset grade** — clear a grade to allow re-grading
+
+Both **Save Grade** and **Return for revision** trigger a student notification — they differ in whether the work is considered done (`graded`) or needs more work (`returned`).
 
 ## Grade status badges
 
@@ -79,6 +81,54 @@ This helps teachers see how each score maps to outcome mastery and classroom int
 4. Select a rating for each rubric criterion.
 5. Add grader notes if needed.
 6. Save or finalize the grade.
+
+## Step-by-step Grading Guide (detailed)
+
+### 1 — Open Grading
+
+1. From the Teacher menu select **Grading** or open `/teacher/grading`
+2. Choose the class you are grading from the left-hand class selector
+3. Select the assignment you want to grade from the assignments list
+
+### 2 — Review Submissions
+
+1. The student list shows submission status (submitted, late, not submitted)
+2. Click a student to view their submission files and previous feedback
+3. If a file fails to open, download and inspect it locally
+
+### 3 — Apply the Rubric
+
+1. The rubric panel displays criteria as rows and rating options as columns
+2. Click the rating cell for each criterion to select it (ratings highlight when chosen)
+3. The total score updates automatically as you select ratings
+4. Add grader comments in the feedback box if required
+
+### 4 — Save, Draft, Finalize
+
+- **Save Draft** — stores your current rubric selections without making the score final. Use when you plan to continue later.
+- **Finalize** — locks the grade (subject to institution policy) and notifies the student if notifications are enabled.
+- **Return for Revision** — if the student needs to rework the submission, return it with comments.
+
+### 5 — Bulk Grading (if enabled)
+
+1. Use multi-select in the student list to choose multiple students
+2. Apply the same rubric rating to all selected students for criteria where the same rating applies
+3. Save or finalize each student's grade as required
+
+### 6 — Viewing Outcome Alignment
+
+1. Each rubric criterion may display a linked outcome code
+2. Click the outcome code to open the Outcome page (teacher view) and see its mastery threshold and description
+
+### 7 — Troubleshooting
+
+- "My rubric changes didn't save": check network connectivity and the unsaved-changes indicator. Save again or try Save Draft.
+- "I lost progress": drafts are saved per-assignment; if drafts are missing, contact your admin.
+- "Student can't see feedback": ensure you finalized the grade or returned the submission with feedback; otherwise, drafts stay private.
+
+---
+
+**Last updated:** 2026-07-03
 
 ## Practical teacher notes
 

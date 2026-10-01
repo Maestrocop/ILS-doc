@@ -33,3 +33,6 @@ Result: teacher notification and intervention workflow can be triggered.
 - "From status tracking to decision intelligence."
 - "Don’t just report risk. Trigger action."
 - "The LMS replacement that operationalizes intervention."
+
+
+**Last updated:** 2026-07-08

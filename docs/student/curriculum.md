@@ -26,3 +26,6 @@ The page typically supports:
 
 - This page is intended for learners to understand the course path.
 - It may show module titles, progress indicators, and links to work items.
+
+
+**Last updated:** 2026-07-08

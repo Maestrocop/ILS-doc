@@ -25,3 +25,6 @@ Go to **My Work** in the admin menu to:
 - Submission-centric grading workspace
 - Distinct from Student Cockpit (which focuses on student action prioritization)
 - Useful for teachers who need to track grading progress across classes
+
+
+**Last updated:** 2026-07-08

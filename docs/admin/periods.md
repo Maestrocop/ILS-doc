@@ -97,3 +97,6 @@ Example:
 
 - Periods provide a time dimension for classes, course sections, and progress reporting.
 - They are commonly used to scope assignments and evaluate student cohorts.
+
+
+**Last updated:** 2026-07-08

@@ -29,3 +29,6 @@ The Intelligent Learning System (ILS) is not a traditional learning management s
 ## Where they connect
 
 ILS can sit alongside or on top of an LMS-style curriculum structure: the LMS provides the learning context, while ILS provides the analytics and decision support.
+
+
+**Last updated:** 2026-07-08

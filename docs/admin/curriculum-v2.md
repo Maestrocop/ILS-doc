@@ -33,3 +33,6 @@ Go to **Curriculum V2** in the admin menu to:
 - **Curriculum Composer V2** — newer blueprint editor with recursive period support
 - **Periods** — institution-level academic calendar periods
 - **Module Composer** — module-level content and outcome mapping
+
+
+**Last updated:** 2026-07-08

@@ -73,3 +73,6 @@ Question: Are the teachers already assigned in `my-classes`, or does that need t
 - Flag missing functionality.
 
 Those gaps become the remaining Timetable Engine work.
+
+
+**Last updated:** 2026-07-08

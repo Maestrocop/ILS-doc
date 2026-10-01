@@ -1,0 +1,27 @@
+path,suggested_action,notes
+admin/curriculum-effectiveness.md,Review,Possible admin guide — consider Add
+admin/end-to-end-walkthrough.md,Archive or Convert,One-off walkthrough — convert to checklist or archive
+admin/institution-review-definitions.md,Review,Used by reviewers? Consider Add
+admin/intelligence-hub.md,Review,Concept doc — check duplication
+admin/progression-review-design.md,Archive or Consolidate,Fragment — consolidate or archive
+admin/progression-review-implementation.md,Archive or Consolidate,Fragment — consolidate or archive
+admin/progression-review-ui.md,Archive or Consolidate,Fragment — consolidate or archive
+admin/setting-up-mentor.md,Review,Operational guide — consider Add
+internal/README-last-updated.md,Archive or Merge,Maintenance artifact
+internal/account-and-password-management.md,Add,Policy — consider Add under Internal Policies
+internal/assistant_workflow_preferences.md,Archive,Agent workflow notes — internal-only
+internal/audit-english-docs.md,Add,Audit report — add under Internal > Audit
+internal/cookie-policy.md,Add,Policy — add under Internal > Policies
+internal/glossary.md,Add,Important — add to Internal or public Glossary
+internal/ils-dev-recent-changes.md,Add or Link,Sync report from ILS-dev — internal
+internal/known-ui-issues.md,Review,Consider Add under Internal > Known Issues
+internal/last-updated-audit.md,Add,Maintenance report
+internal/privacy-and-your-data.md,Add,Policy — legal/ops
+internal/school-data-processing-agreement.md,Add,Policy — legal/ops
+internal/terms-of-service.md,Add,Policy — legal/ops
+internal/translation-localization.md,Add,Useful for future i18n
+internal/archived/TODO-archived.md,Archived,Already archived
+internal/archived/assistant-logs-2026-06-06.md,Archived,Already archived
+internal/archived/ils-session-2026-06-23-090000.md,Archived,Already archived
+internal/archived/pr-summary-archived.md,Archived,Already archived
+internal/archived/ui-issue-archived.md,Archived,Already archived

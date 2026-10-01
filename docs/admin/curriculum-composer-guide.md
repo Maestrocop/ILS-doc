@@ -63,3 +63,6 @@ Link classes to the course curriculum:
 ### Step 5 — Review
 
 Verify periods, assigned modules, and linked classes in the summary view. Confirm and Save.
+
+
+**Last updated:** 2026-07-08

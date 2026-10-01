@@ -104,3 +104,6 @@ Begin small, prove value quickly, then scale across programs.
 - From annual updates to continuous adaptation
 - From anecdotal signals to evidence-based curriculum decisions
 - We don’t predict what companies want; we measure what companies actually make students do.
+
+
+**Last updated:** 2026-07-08

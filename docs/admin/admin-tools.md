@@ -29,3 +29,6 @@ Admin menu (sidebar) pages include:
 
 - Admin deletions are soft (records are archived) to preserve historical auditability
 - Recovering deleted data requires admin support
+
+
+**Last updated:** 2026-07-08

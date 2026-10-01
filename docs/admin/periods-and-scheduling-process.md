@@ -48,3 +48,6 @@ Always create academic periods first (in the calendar), then build curriculum ar
 ## Key rule: Always create calendar first
 
 Do NOT skip creating academic calendar periods, and do NOT ask Curriculum Composer to create them. Calendar setup is the foundation for the entire timetable and curriculum flow.
+
+
+**Last updated:** 2026-07-08

@@ -1,0 +1,53 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Architecture Overview Export" id="ARCH-EXPORT-001">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="teacher" parent="1" vertex="1" value="TEACHER / USER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#1d4ed8;fontSize=16;fontStyle=1;">
+          <mxGeometry x="380" y="40" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cockpit" parent="1" vertex="1" value="STUDENT COCKPIT\n(Daily action + risk + overview)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#d97706;fontSize=14;">
+          <mxGeometry x="330" y="140" width="340" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="risk" parent="1" vertex="1" value="Risk Engine\nIndicators" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontSize=13;">
+          <mxGeometry x="60" y="280" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="overdue" parent="1" vertex="1" value="Overdue\nSystem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontSize=13;">
+          <mxGeometry x="280" y="280" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="recency" parent="1" vertex="1" value="Recency\nSystem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontSize=13;">
+          <mxGeometry x="500" y="280" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="assignment" parent="1" vertex="1" value="Assignment\nTracking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontSize=13;">
+          <mxGeometry x="720" y="280" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="panel" parent="1" vertex="1" value="STUDENT INTELLIGENCE PANEL\n(WHY is student at risk? Drill-down)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontSize=14;">
+          <mxGeometry x="330" y="390" width="340" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="heatmap" parent="1" vertex="1" value="HEATMAP VIEW\n(Outcome-level mastery visualization)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontSize=14;">
+          <mxGeometry x="330" y="510" width="340" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge1" edge="1" parent="1" source="teacher" target="cockpit" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#1d4ed8;html=1;" />
+        <mxCell id="edge2" edge="1" parent="1" source="cockpit" target="risk" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#d97706;html=1;" />
+        <mxCell id="edge3" edge="1" parent="1" source="cockpit" target="overdue" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#d97706;html=1;" />
+        <mxCell id="edge4" edge="1" parent="1" source="cockpit" target="recency" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#d97706;html=1;" />
+        <mxCell id="edge5" edge="1" parent="1" source="cockpit" target="assignment" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#d97706;html=1;" />
+        <mxCell id="edge6" edge="1" parent="1" source="risk" target="panel" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#0284c7;html=1;" />
+        <mxCell id="edge7" edge="1" parent="1" source="overdue" target="panel" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#0284c7;html=1;" />
+        <mxCell id="edge8" edge="1" parent="1" source="recency" target="panel" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#0284c7;html=1;" />
+        <mxCell id="edge9" edge="1" parent="1" source="assignment" target="panel" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#0284c7;html=1;" />
+        <mxCell id="edge10" edge="1" parent="1" source="panel" target="heatmap" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#7c3aed;html=1;" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

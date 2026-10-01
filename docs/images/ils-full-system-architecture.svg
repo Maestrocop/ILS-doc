@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="950" viewBox="0 0 1000 950" role="img">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#1f4287"/>
+    </marker>
+    <style>
+      .box { fill:#f8fafc; stroke:#1d4ed8; stroke-width:2; rx:14; ry:14; }
+      .box-alt { fill:#fef9c3; stroke:#d97706; stroke-width:2; rx:14; ry:14; }
+      .box-secondary { fill:#e0f2fe; stroke:#0284c7; stroke-width:2; rx:14; ry:14; }
+      .box-panel { fill:#ede9fe; stroke:#7c3aed; stroke-width:2; rx:14; ry:14; }
+      .box-heatmap { fill:#dcfce7; stroke:#16a34a; stroke-width:2; rx:14; ry:14; }
+      .text { font-family: Inter, Arial, sans-serif; font-size:16px; fill:#0f172a; }
+      .subtext { font-family: Inter, Arial, sans-serif; font-size:13px; fill:#334155; }
+      .line { fill:none; stroke:#1d4ed8; stroke-width:2; marker-end:url(#arrow); }
+      .line-alt { fill:none; stroke:#d97706; stroke-width:2; marker-end:url(#arrow); }
+      .line-panel { fill:none; stroke:#7c3aed; stroke-width:2; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1000" height="950" fill="#ffffff" />
+  <g>
+    <rect x="380" y="40" width="240" height="60" class="box" />
+    <text x="500" y="72" text-anchor="middle" class="text">TEACHER / USER</text>
+  </g>
+  <g>
+    <rect x="330" y="140" width="340" height="80" class="box-alt" />
+    <text x="500" y="175" text-anchor="middle" class="text">STUDENT COCKPIT</text>
+    <text x="500" y="196" text-anchor="middle" class="subtext">(Daily action + risk + overview)</text>
+  </g>
+  <g>
+    <rect x="60" y="280" width="180" height="70" class="box-secondary" />
+    <text x="150" y="315" class="text">Risk Engine</text>
+    <text x="150" y="336" class="subtext">Indicators</text>
+  </g>
+  <g>
+    <rect x="280" y="280" width="180" height="70" class="box-secondary" />
+    <text x="370" y="315" class="text">Overdue</text>
+    <text x="370" y="336" class="subtext">System</text>
+  </g>
+  <g>
+    <rect x="500" y="280" width="180" height="70" class="box-secondary" />
+    <text x="590" y="315" class="text">Recency</text>
+    <text x="590" y="336" class="subtext">System</text>
+  </g>
+  <g>
+    <rect x="720" y="280" width="180" height="70" class="box-secondary" />
+    <text x="810" y="315" class="text">Assignment</text>
+    <text x="810" y="336" class="subtext">Tracking</text>
+  </g>
+  <g>
+    <path class="line" d="M500,140 L500,180" />
+    <path class="line-alt" d="M430,180 L150,280" />
+    <path class="line-alt" d="M470,180 L370,280" />
+    <path class="line-alt" d="M500,180 L590,280" />
+    <path class="line-alt" d="M580,180 L810,280" />
+  </g>
+  <g>
+    <rect x="330" y="390" width="340" height="80" class="box-panel" />
+    <text x="500" y="425" text-anchor="middle" class="text">STUDENT INTELLIGENCE PANEL</text>
+    <text x="500" y="446" text-anchor="middle" class="subtext">(WHY is student at risk? Drill-down)</text>
+  </g>
+  <g>
+    <path class="line" d="M150,350 L150,390" />
+    <path class="line" d="M370,350 L370,390" />
+    <path class="line" d="M590,350 L590,390" />
+    <path class="line" d="M810,350 L650,390" />
+  </g>
+  <g>
+    <rect x="330" y="510" width="340" height="80" class="box-heatmap" />
+    <text x="500" y="545" text-anchor="middle" class="text">HEATMAP VIEW</text>
+    <text x="500" y="566" text-anchor="middle" class="subtext">(Outcome-level mastery visualization)</text>
+  </g>
+  <g>
+    <path class="line-panel" d="M500,470 L500,510" />
+  </g>
+</svg>

@@ -32,3 +32,6 @@ Campus reporting rules control teacher-facing intelligence thresholds. Each camp
 - Teacher reports (Heatmap, Classroom Intelligence, Student Cockpit) use these thresholds
 - Missing campus rules fall back to safe default values
 - Thresholds align with local academic policies
+
+
+**Last updated:** 2026-07-08
