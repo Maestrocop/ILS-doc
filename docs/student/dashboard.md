@@ -4,13 +4,14 @@ Your dashboard is your personal learning home page. It shows your progress at a 
 
 ## What the dashboard shows
 
-- **Average Score** — your overall grade across all graded work (0–10 scale)
+- **Average Score** — your outcome-based mastery average (0–10 scale), not a raw average of assignment scores. It reflects how many learning outcomes you've actually proven mastery of, which can differ from your assignment grades if mastery for a given outcome requires being shown correctly more than once.
 - **Quick stats** — how many assignments you've submitted, what's pending, and what's graded
 - **Next Actions** — assignments due soon or overdue, ordered by urgency, linking straight to each one
 - **Attendance** — a present/absent/late/excused breakdown, with a warning if attendance drops below 80%
 - **Modules** — how many of your enrolled modules are Completed / In Progress / Not Started, plus a module-completion progress bar (see "Modules progress" below)
 - **Recent Grades** — your most recent graded submissions with scores and feedback links
 - **Outcome Performance** — how you're doing on each learning outcome (Strong / Developing / At-Risk), the day-to-day/weekly view of competency mastery
+- **Exam Countdown** — if your class has an upcoming exam scheduled, a card near the top ticks down the days/hours/minutes/seconds to it live. It only appears once a teacher has actually scheduled an exam date for your class — no exam scheduled yet means no card.
 
 ## Modules progress
 
@@ -28,14 +29,11 @@ This used to show `~X / 45 EC estimated`. **EC (European Credits / ECTS)** is HB
 
 Fix shipped ("Option 3a" of the discussion): dropped the EC framing, show plain module-completion % instead — no new data needed. While fixing this, also found and fixed a real undercounting bug: the Outcome Performance section's Strong/Developing/At-Risk counts were silently capped by a backend `LIMIT 10` meant for a different purpose ("weakest 10 to review"), so a student with more than 10 outcomes with evidence never got their genuinely mastered ones counted.
 
-### Planned next: Kerntaken-level rollup ("Option 3b")
+### Shipped: Kerntaken Progress rollup
 
-The Outcome Performance section already gives day-to-day/weekly monitoring at the individual skill/werkproces level (using real graded evidence via `student_outcome_snapshots`, not a manual estimate). The next step is rolling that up to the Kerntaak level for periode-end review (teacher/SLB/student together) — e.g. "2 of 3 Kerntaken mastered" instead of a flat list of skills.
+The planned Kerntaak-level rollup above is now live as the **Kerntaken Progress** widget: outcomes are grouped by Kerntaak (e.g. "Beheert de infrastructuur"), and a Kerntaak only reads as mastered once *every* outcome under it — not just the ones you've been graded on so far — clears the mastery threshold. A companion **Exam / PvB readiness** widget uses the same grouping, scoped to Werkproces level.
 
-Prerequisite already in progress: linking outcomes to assignment rubrics (65 rubric criteria linked locally as of 2026-09-19, 2,941 snapshots generated). To finish the setup:
-1. Create one `outcomes` row per Kerntaak (e.g. B1-K1, B1-K2, B1-K3).
-2. Set `parent_id` on the existing skill/werkproces-level outcomes to point up to the right Kerntaak (the column already exists on `outcomes` — no migration needed, just data entry).
-3. A Kerntaak then reads as mastered once its child outcomes collectively clear the mastery threshold.
+Note: both widgets only count outcomes you have at least one graded snapshot for. If a Kerntaak shows 0 progress despite having done related assignments, check that those assignments' rubric criteria are actually linked to outcomes under that Kerntaak — a missing link, not missing work, is the usual cause.
 
 ## How to read your dashboard
 
@@ -60,4 +58,4 @@ When you see an outcome with low performance:
 5. Use outcome trends to guide your revision priorities
 
 
-**Last updated:** 2026-09-19
+**Last updated:** 2026-10-03

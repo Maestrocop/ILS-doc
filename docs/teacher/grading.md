@@ -68,6 +68,18 @@ The page shows status badges such as:
 
 These labels help teachers understand submission readiness.
 
+## AI grading assistance ("Ibn Rushd")
+
+The rubric panel has a **"✦ Suggest with AI"** button. It reads the assignment's own text (description, objectives, instructions, case study), the rubric, the student's submitted files, and — as of October 2026 — any **Resources you've linked to the assignment** (e.g. an escalation procedure or reference sheet), so it can check the student's work against real reference material, not just judge internal consistency.
+
+- Only PDF, plain text, JPG, and PNG are readable by the AI — for both student submissions and linked Resources. Word/Excel/PowerPoint files are silently skipped; convert them to PDF first if you want them considered.
+- The AI's suggestions (per-criterion rating + justification, plus overall feedback) are never saved automatically — you review and apply them, or ignore them and grade manually. Nothing changes until you click Save/Finalize yourself.
+- If a linked Resource or submission file can't be read, you'll see a note listing which files were skipped.
+
+## Resubmission clears the previous grade
+
+If a student resubmits after you've already graded their work, the old score and rubric selections are cleared automatically (not left showing stale results against the new file) — the submission goes back to "pending" so you know it genuinely needs a fresh look.
+
 ## Outcome alignment
 
 Each rubric criterion may show the linked outcome or learning target.
@@ -95,6 +107,7 @@ This helps teachers see how each score maps to outcome mastery and classroom int
 1. The student list shows submission status (submitted, late, not submitted)
 2. Click a student to view their submission files and previous feedback
 3. If a file fails to open, download and inspect it locally
+4. The header shows **"Last submitted"** — the actual time the student's file was uploaded, not when you last graded it, so it stays accurate even after grading
 
 ### 3 — Apply the Rubric
 
@@ -128,7 +141,7 @@ This helps teachers see how each score maps to outcome mastery and classroom int
 
 ---
 
-**Last updated:** 2026-07-03
+**Last updated:** 2026-10-03
 
 ## Practical teacher notes
 
