@@ -1,4 +1,16 @@
 site_name: ILS Documentation
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: nl
+          name: Nederlands
+          build: true
 nav:
     - Home: index.md
     - Developer Guide:
@@ -149,6 +161,7 @@ nav:
             - Gradebook: user/teachers/gradebook.md
             - Imports: user/teachers/imports.md
             - Outcomes: user/teachers/outcomes.md
+            - PvB Exams (Teacher and Coordinator): user/pvb-exams-staff.md
             - FAQs: user/teachers/faqs.md
         - Students:
             - Overview: user/students.md
@@ -166,6 +179,8 @@ nav:
             - ImportShell: user/admins/importshell.md
             - Templates: user/admins/templates.md
             - Backups: user/admins/backups.md
+        - Company Assessors:
+            - PvB Exam in BPV: user/assessors/pvb-exam-in-bpv.md
     - Phase 5:
         - "Calendar (Epic #122)": phase5/calendar.md
         - "Process Engine (Epic #127)": phase5/process-engine.md
@@ -211,6 +226,7 @@ nav:
         - student/quiz.md
         - student/dashboard.md
         - Internships: student/internships-quickstart.md
+        - Exam in BPV (PvB): student/pvb-exam-in-bpv.md
         - student/outcomes.md
     - Marketing:
         - marketing/index.md
