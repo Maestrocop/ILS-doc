@@ -41,7 +41,7 @@ Example structure:
     - Block 1 (Sep → Oct 2025)
     - Block 2 (Nov → Jan 2026)
   - Semester 2 (Feb 2026 → Jun 2026)
-    - `Block 3 (Feb → Mar 2026)
+    - Block 3 (Feb → Mar 2026)
     - Block 4 (Apr → Jun 2026)
 
 **Key rule:** Academic Periods are institution-level and date-based. They represent the official published school calendar.
