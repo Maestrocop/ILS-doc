@@ -11,6 +11,125 @@ plugins:
         - locale: nl
           name: Nederlands
           build: true
+          nav_translations:
+                        Academic Calendar: Academische kalender
+                        Account Settings: Accountinstellingen
+                        Admin Guide: Beheerdershandleiding
+                        Admin Health Checks: Beheerderscontroles
+                        Admin Overview: Beheerdersoverzicht
+                        Admin Tools: Beheerderstools
+                        Admins: Beheerders
+                        Audit Logs: Auditlogboeken
+                        BSA Multi-Institution: BSA voor meerdere instellingen
+                        Backups: Back-ups
+                        Calendar & Events: Kalender en gebeurtenissen
+                        Categories: Categorieën
+                        Class Deletion: Klas verwijderen
+                        Companies: Bedrijven
+                        Company Assessors: Bedrijfsbeoordelaars
+                        Coordinator: Coördinator
+                        Coordinators: Coördinatoren
+                        Course Builder: Cursus samenstellen
+                        Courses: Cursussen
+                        Courses & Modules: Cursussen en modules
+                        Curriculum Composer: Curriculum Composer
+                        Curriculum Composer Guide: Handleiding Curriculum Composer
+                        Curriculum Composer V2: Curriculum Composer V2
+                        Curriculum Composer vs Class Setup: Curriculum Composer versus klasinstelling
+                        Curriculum Effectiveness: Curriculumeffectiviteit
+                        Curriculum Entry (OP1): Curriculum invoeren (OP1)
+                        Curriculum Structure Guidance: Richtlijnen voor curriculumstructuur
+                        Data Exchange: Gegevensuitwisseling
+                        Decision Layer Guidelines: Richtlijnen voor beslisniveaus
+                        Delivery Examples: Voorbeelden van onderwijsuitvoering
+                        Delivery Planner: Onderwijsplanner
+                        End-to-End Setup Guide: Handleiding voor volledige inrichting
+                        End-to-End Walkthrough: Stapsgewijze handleiding van begin tot eind
+                        Escalation Matrix: Escalatiematrix
+                        Exam in BPV (PvB): Examen in BPV (PvB)
+                        FAQs: Veelgestelde vragen
+                        Gradebook: Cijferlijst
+                        Grading & Rubrics: Beoordelen en rubrics
+                        Import Report: Importverslag
+                        ImportShell: ImportShell
+                        ImportShell Mockup: ImportShell-mock-up
+                        Imports: Imports
+                        Institution Review Definitions: Beoordelingsdefinities per instelling
+                        Intelligence Hub: Intelligence Hub
+                        Internships: Stages
+                        Intervention Note Spec: Specificatie interventienotitie
+                        Interventions: Interventies
+                        Issue Templates: Issuetemplates
+                        Module Composer — Locks & Sequencing: Module Composer — vergrendelingen en volgorde
+                        Module Sequencing: Modulevolgorde
+                        My Work: Mijn werk
+                        Notifications: Meldingen
+                        Outcomes API Contract: API-contract voor leeruitkomsten
+                        Outcomes Dev README: README voor ontwikkelaars van leeruitkomsten
+                        Outcomes Importer Spec: Specificatie voor import van leeruitkomsten
+                        Outcomes Responses: Voorbeelden van importresponsen
+                        Outcomes Schema: Schema voor leeruitkomsten
+                        Outcomes Template (v1): Sjabloon voor leeruitkomsten (v1)
+                        Outcomes — Teacher Guide: Leeruitkomsten — docentenhandleiding
+                        PDCA & Feedback: PDCA en feedback
+                        PDCA Poster: PDCA-poster
+                        Passing-but-Outcome-Gap Alerts: Waarschuwingen bij voldoende resultaat met een leeruitkomsthiaat
+                        Periods: Onderwijsperioden
+                        Periods & Scheduling: Onderwijsperioden en roostering
+                        Periods & Templates: Onderwijsperioden en sjablonen
+                        Periods Playbook (Cheat Sheet): Stappenplan onderwijsperioden (spiekbrief)
+                        Periods Playbook (step-by-step): Stappenplan onderwijsperioden (stap voor stap)
+                        Permissions: Rechten
+                        Pre-September Setup Checklist: Checklist voor inrichting vóór september
+                        Programme Health: Programmastatus
+                        Programs: Programma's
+                        Progress: Voortgang
+                        Progression Review Test Guide: Testhandleiding voortgangsbeoordeling
+                        Progression Review — Design: Voortgangsbeoordeling — ontwerp
+                        Progression Review — Implementation: Voortgangsbeoordeling — implementatie
+                        Progression Review — UI: Voortgangsbeoordeling — UI
+                        Projects: Projecten
+                        PvB Exam in BPV: PvB-examen in BPV
+                        PvB Exams (Teacher and Coordinator): PvB-examens (docent en coördinator)
+                        Quick Start: Snel aan de slag
+                        Quizzes: Quizzen
+                        Reminder Engine Spec: Specificatie herinneringsengine
+                        Reminder Rules: Herinneringsregels
+                        Roadmap Tasks: Roadmaptaken
+                        Rubrics & Criteria: Rubrics en criteria
+                        SLB / Mentor Quick Guide: Snelgids SLB / mentor
+                        Security & Compliance: Beveiliging en naleving
+                        Session Feedback Mockup: Mock-up voor Session Feedback
+                        Session Feedback RFC: RFC voor Session Feedback
+                        Setting Up a Mentor: Een mentor instellen
+                        Settings & Reporting Rules: Instellingen en rapportageregels
+                        Setup Health: Status van de inrichting
+                        Slot Edit Proposal: Voorstel voor tijdslotbewerking
+                        Student Assignment: Opdracht voor studenten
+                        Student Curriculum: Curriculum voor studenten
+                        Student Dashboard (My Dashboard): Studentdashboard (Mijn dashboard)
+                        Student Guide: Studenthandleiding
+                        Student Intelligence Panel: Studentenintelligentiepanel
+                        Student Manual: Studentenhandleiding
+                        Student Quiz: Quiz voor studenten
+                        Student Support: Studentondersteuning
+                        Students: Studenten
+                        Submission Workflow: Inzendproces
+                        Submitting: Indienen
+                        Submitting Work: Werk inleveren
+                        Teacher Dashboard: Docentendashboard
+                        Teacher FAQ: Veelgestelde vragen voor docenten
+                        Teacher Guide: Docentenhandleiding
+                        Teacher Manual: Docentenhandleiding
+                        Teachers: Docenten
+                        Templates: Sjablonen
+                        Timetable & Makeup Sessions: Rooster en inhaalsessies
+                        Timetable Engine Walkthrough: Stapsgewijze handleiding Timetable Engine
+                        Tracking Your Progress: Je voortgang volgen
+                        User Guides: Gebruikershandleidingen
+                        Viewing Feedback: Feedback bekijken
+                        Viewing Grades: Cijfers bekijken
+                        Weekly Workflow: Wekelijkse werkwijze
 nav:
     - Home: index.md
     - Developer Guide:
